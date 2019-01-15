@@ -12,3 +12,145 @@ Picked up _JAVA_OPTIONS: -Xmx512m
 Started
 Running in Durability level: PERFORMANCE_OPTIMIZED
   50.690 [id=37]	WARNING	i.f.k.c.i.VersionUsageUtils#alert: The client is using resource type 'customresourcedefinitions' with unstable version 'v1beta1'
+[Pipeline] node
+Running on Jenkins in /tmp/jenkinsTests.tmp/jenkins4525849126453770675test/workspace/job
+[Pipeline] {
+  96.932 [id=78]	WARNING	o.j.plugins.workflow.cps.DSL#invokeStep: Error storing the arguments for step: checkout
+org.kohsuke.stapler.NoStaplerConstructorException: There's no @DataBoundConstructor on any constructor of class io.jenkins.jenkinsfile.runner.FileSystemSCM
+	at org.kohsuke.stapler.ClassDescriptor.loadConstructorParamNames(ClassDescriptor.java:265)
+	at org.jenkinsci.plugins.structs.describable.DescribableModel.<init>(DescribableModel.java:144)
+	at org.jenkinsci.plugins.structs.describable.DescribableModel.of(DescribableModel.java:114)
+	at org.jenkinsci.plugins.workflow.cps.actions.ArgumentsActionImpl.sanitizeObjectAndRecordMutation(ArgumentsActionImpl.java:294)
+	at org.jenkinsci.plugins.workflow.cps.actions.ArgumentsActionImpl.sanitizeMapAndRecordMutation(ArgumentsActionImpl.java:386)
+	at org.jenkinsci.plugins.workflow.cps.actions.ArgumentsActionImpl.<init>(ArgumentsActionImpl.java:74)
+	at org.jenkinsci.plugins.workflow.cps.DSL.invokeStep(DSL.java:245)
+	at org.jenkinsci.plugins.workflow.cps.DSL.invokeMethod(DSL.java:178)
+	at org.jenkinsci.plugins.workflow.cps.CpsScript.invokeMethod(CpsScript.java:122)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at com.cloudbees.groovy.cps.sandbox.DefaultInvoker.methodCall(DefaultInvoker.java:20)
+	at com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:57)
+	at com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:109)
+	at com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:82)
+	at sun.reflect.GeneratedMethodAccessor97.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)
+	at com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:76)
+	at com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)
+	at com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:66)
+	at sun.reflect.GeneratedMethodAccessor123.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)
+	at com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)
+	at com.cloudbees.groovy.cps.Next.step(Next.java:83)
+	at com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)
+	at com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)
+	at org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:129)
+	at org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:268)
+	at com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:163)
+	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$101(SandboxContinuable.java:34)
+	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.lambda$run0$0(SandboxContinuable.java:59)
+	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.GroovySandbox.runInSandbox(GroovySandbox.java:121)
+	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:58)
+	at org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:182)
+	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:332)
+	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.access$200(CpsThreadGroup.java:83)
+	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:244)
+	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:232)
+	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$2.call(CpsVmExecutorService.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:131)
+	at jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)
+	at jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withCredentials
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (CI Build and push snapshot)
+Stage "CI Build and push snapshot" skipped due to when conditional
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Release)
+[Pipeline] dir
+Running in /home/jenkins/go/src/github.com/jenkins-x/oauth2-proxy
+[Pipeline] {
+[Pipeline] git
+Cloning the remote Git repository
+Cloning repository https://github.com/jenkins-x/oauth2_proxy.git
+ > git init /home/jenkins/go/src/github.com/jenkins-x/oauth2-proxy # timeout=10
+Fetching upstream changes from https://github.com/jenkins-x/oauth2_proxy.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/jenkins-x/oauth2_proxy.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/jenkins-x/oauth2_proxy.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/jenkins-x/oauth2_proxy.git # timeout=10
+Fetching upstream changes from https://github.com/jenkins-x/oauth2_proxy.git
+ > git fetch --tags --progress https://github.com/jenkins-x/oauth2_proxy.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision bf3f363891b41850b91711a005b365ae7e716beb (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f bf3f363891b41850b91711a005b365ae7e716beb
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b master bf3f363891b41850b91711a005b365ae7e716beb
+Commit message: "corrected github URL"
+First time build. Skipping changelog.
+[Pipeline] sh
++ jx-release-version
++ echo 2.3.2
+[Pipeline] sh
++ cat VERSION
++ jx step tag --version 2.3.2
+Tag v2.3.2 created and pushed to remote origin
+[Pipeline] sh
++ make build
+go build -o oauth2_proxy
+main.go:12:2: cannot find package "github.com/BurntSushi/toml" in any of:
+	/usr/local/go/src/github.com/BurntSushi/toml (from $GOROOT)
+	/home/jenkins/go/src/github.com/BurntSushi/toml (from $GOPATH)
+oauthproxy.go:17:2: cannot find package "github.com/bitly/oauth2_proxy/cookie" in any of:
+	/usr/local/go/src/github.com/bitly/oauth2_proxy/cookie (from $GOROOT)
+	/home/jenkins/go/src/github.com/bitly/oauth2_proxy/cookie (from $GOPATH)
+oauthproxy.go:18:2: cannot find package "github.com/bitly/oauth2_proxy/providers" in any of:
+	/usr/local/go/src/github.com/bitly/oauth2_proxy/providers (from $GOROOT)
+	/home/jenkins/go/src/github.com/bitly/oauth2_proxy/providers (from $GOPATH)
+options.go:17:2: cannot find package "github.com/coreos/go-oidc" in any of:
+	/usr/local/go/src/github.com/coreos/go-oidc (from $GOROOT)
+	/home/jenkins/go/src/github.com/coreos/go-oidc (from $GOPATH)
+oauthproxy.go:19:2: cannot find package "github.com/mbland/hmacauth" in any of:
+	/usr/local/go/src/github.com/mbland/hmacauth (from $GOROOT)
+	/home/jenkins/go/src/github.com/mbland/hmacauth (from $GOPATH)
+main.go:13:2: cannot find package "github.com/mreiferson/go-options" in any of:
+	/usr/local/go/src/github.com/mreiferson/go-options (from $GOROOT)
+	/home/jenkins/go/src/github.com/mreiferson/go-options (from $GOPATH)
+watcher.go:11:2: cannot find package "gopkg.in/fsnotify/fsnotify.v1" in any of:
+	/usr/local/go/src/gopkg.in/fsnotify/fsnotify.v1 (from $GOROOT)
+	/home/jenkins/go/src/gopkg.in/fsnotify/fsnotify.v1 (from $GOPATH)
+Makefile:14: recipe for target 'build' failed
+make: *** [build] Error 1
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
