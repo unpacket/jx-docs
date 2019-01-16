@@ -73,3 +73,41 @@ Running on Jenkins in /tmp/jenkinsTests.tmp/jenkins8034289477691462522test/works
 [Pipeline] stage
 [Pipeline] { (Declarative: Checkout SCM)
 [Pipeline] checkout
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withCredentials
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (CI Build)
+Stage "CI Build" skipped due to when conditional
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build and Push Release)
+[Pipeline] git
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/jenkins-x/jx-tutorial # timeout=10
+Fetching upstream changes from https://github.com/jenkins-x/jx-tutorial
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/jenkins-x/jx-tutorial +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 69155ea4603b7c81c77eac3dbd15eb899754258a (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 69155ea4603b7c81c77eac3dbd15eb899754258a
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 69155ea4603b7c81c77eac3dbd15eb899754258a
+Commit message: "Merge pull request #438 from jenkins-x/updatebot-5b957021-4bf5-43e8-9ec6-ceb0369f517b"
+First time build. Skipping changelog.
+[Pipeline] echo
+release build
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
