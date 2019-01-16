@@ -1,0 +1,14 @@
+Step: build-step-credential-initializer:
+
+{"level":"warn","ts":1547642857.9117362,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547642857.912196,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-0:
+
+{"level":"warn","ts":1547642860.3217547,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547642862.689132,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/cloudbees/core-frontend.git\" @ \"de36dad8c37823a417a88723f03806525f6b31d0\" in path \"/workspace\""}
+Step: build-step-jenkins:
+
+Picked up _JAVA_OPTIONS: -Xmx400m
+Started
+Running in Durability level: PERFORMANCE_OPTIMIZED
+  24.298 [id=40]	WARNING	i.f.k.c.i.VersionUsageUtils#alert: The client is using resource type 'customresourcedefinitions' with unstable version 'v1beta1'
