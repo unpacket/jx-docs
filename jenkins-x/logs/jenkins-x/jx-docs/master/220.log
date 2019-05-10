@@ -1,0 +1,45 @@
+Step: build-step-credential-initializer-ll5bn:
+
+{"level":"warn","ts":1557485169.045635,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1557485169.046812,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-**-docs-master-tekton-rhgpg:
+
+{"level":"warn","ts":1557485169.4809985,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1557485173.813977,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/**-docs\" @ \"v0.0.263\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:cd22f6fb60973441149150e7b9b8f3efa4525726
+time="2019-05-10T10:46:15Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-step2:
+
+Cloning into 'jenkins-x-website'...
+Step: build-step-step3:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-step4:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 478 |  81  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   1 |   1  
+  Static files     | 253 | 253  
+  Processed images |   0 |   0  
+  Aliases          |  64 |   9  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 1081 ms
+Step: build-step-step5:
+
+/workspace/source/jenkins-x-website /workspace/source
+Generated Git credentials file /builder/home/git/credentials
+[master a133fd0] updated site
+ 485 files changed, 1526 insertions(+), 1526 deletions(-)
+To https://github.com/jenkins-x/jenkins-x-website.git
+   7a98cf9..a133fd0  master -> master
+/workspace/source
