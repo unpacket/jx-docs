@@ -1,0 +1,18 @@
+Step: build-step-credential-initializer-z4hkc:
+
+Unable to retrieve container logs for docker://bf128276dc203b5832cd6a4f99dfe021690e01119a7e9328515531f38db3d012
+Step: build-step-git-source-jenkins-x-homebrew-**-master-te-bc56g:
+
+Unable to retrieve container logs for docker://f3ca5347a4a8702041ff93ffe367627e944add0853aea13744c03355a034aa60
+Step: build-step-place-tools:
+
+Unable to retrieve container logs for docker://249cb2a2280dec4b13dc31187e94153eb863434b0ece7d79523c88a6f0968574
+Step: build-step-git-merge:
+
+Unable to retrieve container logs for docker://13ac136d5cfbb55b7c29f61a4e7bcc7a8fb743c5d8a1c04567438f2701a0a435
+Step: build-step-setup-**-git-credentials:
+
+Unable to retrieve container logs for docker://815a2f98fba0c3493bff54cd19f4d302460c8965a0b2f72c419d6dfebebddb04
+Step: build-step-build-dummy-release:
+
+Unable to retrieve container logs for docker://42b09b150f76c84d81614b248590eb5754d7f46a5cc0690aa9a6ce3a744bf83a
