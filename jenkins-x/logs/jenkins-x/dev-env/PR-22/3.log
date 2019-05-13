@@ -1,0 +1,421 @@
+Step: build-step-credential-initializer-gxbqg:
+
+{"level":"warn","ts":1557743023.1049788,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1557743023.1059844,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jenkins-x-dev-env-pr-22-tekton-jkwlc:
+
+{"level":"warn","ts":1557743023.800991,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1557743025.0311725,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jenkins-x/dev-env\" @ \"700b4eb2a18272cfffad944ef2d326c8c19e4806\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+548a93a-dev+981c48321: No Major.Minor.Patch elements found
+Using SHAs from PULL_REFS=master:ee9041d0542045159dcfb6183d5d0a10818ce4ef,22:700b4eb2a18272cfffad944ef2d326c8c19e4806
+ran git fetch --unshallow origin 700b4eb2a18272cfffad944ef2d326c8c19e4806: ee9041d0542045159dcfb6183d5d0a10818ce4ef: in 
+ran git checkout master in 
+ran git reset --hard ee9041d0542045159dcfb6183d5d0a10818ce4ef in 
+ran clean --force -d . in 
+ran git merge 700b4eb2a18272cfffad944ef2d326c8c19e4806 in 
+Step: build-step-step2:
+
+/builder/home/kaniko-secret.json
+Step: build-step-step3:
+
+[36mINFO[0m[0000] Downloading base image jenkinsxio/**:1.3.971 
+ERROR: logging before flag.Parse: E0513 10:24:08.491160      12 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0513 10:24:08.498010      12 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:da02d2ba948c6b95cc480921f4660286858e96dd286b86532b5f6922809bb117: no such file or directory 
+[36mINFO[0m[0001] Downloading base image jenkinsxio/**:1.3.971 
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] Storing source image from stage 0 at path /kaniko/stages/0 
+[36mINFO[0m[0013] Deleting filesystem...                       
+[36mINFO[0m[0013] Downloading base image lachlanevenson/k8s-kubectl:v1.13.4 
+[36mINFO[0m[0014] Error while retrieving image from cache: getting file info: stat /workspace/sha256:d57a59419cf652fdbc629c03e5c7d4adebb95be1d582156d4b1f8fe7935f4065: no such file or directory 
+[36mINFO[0m[0014] Downloading base image lachlanevenson/k8s-kubectl:v1.13.4 
+[36mINFO[0m[0014] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0014] Taking snapshot of full filesystem...        
+[36mINFO[0m[0023] Storing source image from stage 1 at path /kaniko/stages/1 
+[36mINFO[0m[0025] Deleting filesystem...                       
+[36mINFO[0m[0025] Downloading base image lachlanevenson/k8s-helm:v2.12.3 
+[36mINFO[0m[0026] Error while retrieving image from cache: getting file info: stat /workspace/sha256:de798725c1149a95fbb7e0005a27f03decea878e4dbc74c89e030a6142963c20: no such file or directory 
+[36mINFO[0m[0026] Downloading base image lachlanevenson/k8s-helm:v2.12.3 
+[36mINFO[0m[0026] Executing 0 build triggers                   
+[36mINFO[0m[0026] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0026] Taking snapshot of full filesystem...        
+[36mINFO[0m[0027] Storing source image from stage 2 at path /kaniko/stages/2 
+[36mINFO[0m[0030] Deleting filesystem...                       
+[36mINFO[0m[0030] Downloading base image google/cloud-sdk:237.0.0-alpine 
+[36mINFO[0m[0031] Error while retrieving image from cache: getting file info: stat /workspace/sha256:fc5a5a88eb49e646adac05ac6a352219d3d676a122fca0b90a2ae2ab091222bb: no such file or directory 
+[36mINFO[0m[0031] Downloading base image google/cloud-sdk:237.0.0-alpine 
+[36mINFO[0m[0032] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0032] Taking snapshot of full filesystem...        
+[36mINFO[0m[0035] Storing source image from stage 3 at path /kaniko/stages/3 
+[36mINFO[0m[0040] Deleting filesystem...                       
+[36mINFO[0m[0040] Downloading base image groovy:2.5.6-jdk8-alpine 
+[36mINFO[0m[0041] Error while retrieving image from cache: getting file info: stat /workspace/sha256:eb533defccee49d89ecf9f0aee5b51fa55731e92b6fc70bdb2fd5ad548f57e27: no such file or directory 
+[36mINFO[0m[0041] Downloading base image groovy:2.5.6-jdk8-alpine 
+[36mINFO[0m[0042] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0042] Taking snapshot of full filesystem...        
+[36mINFO[0m[0044] Storing source image from stage 4 at path /kaniko/stages/4 
+[36mINFO[0m[0054] Deleting filesystem...                       
+[36mINFO[0m[0054] Downloading base image golang:1.11.4-alpine3.8 
+[36mINFO[0m[0054] Error while retrieving image from cache: getting file info: stat /workspace/sha256:d8ea6f800aa75073be131c63cf0ad7352bc324df04fa43e7f52d02f5c48601fa: no such file or directory 
+[36mINFO[0m[0054] Downloading base image golang:1.11.4-alpine3.8 
+[36mINFO[0m[0055] Using files from context: [/workspace/source/env/default/.vim/colors/molokai_dark.vim] 
+[36mINFO[0m[0055] Using files from context: [/workspace/source/env/default/.vim/syntax/groovy.vim] 
+[36mINFO[0m[0055] Checking for cached layer gcr.io/jenkinsxio/cache:dc8eff532e019a902244e01ab4118bf243a2bea83cb13965efbb97acfb5b2379... 
+[36mINFO[0m[0056] Cache entry expired: gcr.io/jenkinsxio/cache:dc8eff532e019a902244e01ab4118bf243a2bea83cb13965efbb97acfb5b2379 
+[36mINFO[0m[0056] No cached layer found for cmd RUN mkdir -p ${home}     && addgroup -g ${gid} ${group}     && adduser -h ${home} -u ${uid} -G ${group} -s /bin/bash -D ${user}     && mkdir -p $GOPATH/src $GOPATH/bin 
+[36mINFO[0m[0056] Unpacking rootfs as cmd RUN mkdir -p ${home}     && addgroup -g ${gid} ${group}     && adduser -h ${home} -u ${uid} -G ${group} -s /bin/bash -D ${user}     && mkdir -p $GOPATH/src $GOPATH/bin requires it. 
+[36mINFO[0m[0064] Taking snapshot of full filesystem...        
+[36mINFO[0m[0081] ARG user=developer                           
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ARG group=developer                          
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ARG home=/home/${user}                       
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ARG uid=1000                                 
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ARG gid=1000                                 
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ENV HUB_VERSION 2.7.0                        
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ENV DEP_VERSION 0.5.0                        
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ENV GOPATH ${home}/go-workspace              
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH 
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] ENV GROOVY_HOME /opt/groovy                  
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] Using files from context: [/workspace/source/env/default/.vim/colors/molokai_dark.vim] 
+[36mINFO[0m[0081] ADD ./env/default/.vim/colors/molokai_dark.vim /tmp/colors/molokai_dark.vim 
+[36mINFO[0m[0081] Taking snapshot of files...                  
+[36mINFO[0m[0081] Using files from context: [/workspace/source/env/default/.vim/syntax/groovy.vim] 
+[36mINFO[0m[0081] ADD ./env/default/.vim/syntax/groovy.vim /tmp/syntax/groovy.vim 
+[36mINFO[0m[0081] Taking snapshot of files...                  
+[36mINFO[0m[0081] WORKDIR /                                    
+[36mINFO[0m[0081] cmd: workdir                                 
+[36mINFO[0m[0081] Changed working directory to /               
+[36mINFO[0m[0081] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0081] RUN mkdir -p ${home}     && addgroup -g ${gid} ${group}     && adduser -h ${home} -u ${uid} -G ${group} -s /bin/bash -D ${user}     && mkdir -p $GOPATH/src $GOPATH/bin 
+[36mINFO[0m[0081] cmd: /bin/sh                                 
+[36mINFO[0m[0081] args: [-c mkdir -p ${home}     && addgroup -g ${gid} ${group}     && adduser -h ${home} -u ${uid} -G ${group} -s /bin/bash -D ${user}     && mkdir -p $GOPATH/src $GOPATH/bin] 
+[36mINFO[0m[0081] Taking snapshot of full filesystem...        
+[36mINFO[0m[0083] RUN apk --no-cache --update add        vim        grep        tar        dos2unix        shadow        gcc        libc-dev        ca-certificates        docker        tree        jq        multitail        ngrep        nmap        unzip        wget        curl        openjdk8        git        git-perl        git-email        tig        bash        bash-completion        tmux        make        terraform        python        py-crcmod        libc6-compat        openssh-client        gnupg        openssl        drill     && curl -sL https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz | tar zx --strip 2 -C /usr/local/bin hub-linux-amd64-${HUB_VERSION}/bin/hub     && usermod -a -G docker ${user}     && usermod -a -G root ${user}     && curl -sL https://raw.githubusercontent.com/golang/dep/v${DEP_VERSION}/install.sh | sh     && mkdir -p /opt     && mkdir -p /home/${user}/.vim/pack/plugins/start     && mkdir -p /home/${user}/.vim/syntax     && rm /usr/bin/vi && ln -s /usr/bin/vim /usr/bin/vi     && go get golang.org/x/tools/cmd/gorename     && go get github.com/nsf/gocode     && go get github.com/mfuentesg/ksd     && go get github.com/jenkins-x/**-release-version     && go get github.com/gohugoio/hugo     && $GOPATH/bin/gocode set propose-builtins true     && git clone https://github.com/fatih/vim-go.git /home/${user}/.vim/pack/plugins/start/vim-go     && git clone https://github.com/manniwood/vim-buf.git /home/${user}/.vim/pack/plugins/start/vim-buf     && mv /tmp/colors /home/${user}/.vim     && mv /tmp/syntax /home/${user}/.vim     && chown -R ${user}:${group} /home/${user} 
+[36mINFO[0m[0083] cmd: /bin/sh                                 
+[36mINFO[0m[0083] args: [-c apk --no-cache --update add        vim        grep        tar        dos2unix        shadow        gcc        libc-dev        ca-certificates        docker        tree        jq        multitail        ngrep        nmap        unzip        wget        curl        openjdk8        git        git-perl        git-email        tig        bash        bash-completion        tmux        make        terraform        python        py-crcmod        libc6-compat        openssh-client        gnupg        openssl        drill     && curl -sL https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz | tar zx --strip 2 -C /usr/local/bin hub-linux-amd64-${HUB_VERSION}/bin/hub     && usermod -a -G docker ${user}     && usermod -a -G root ${user}     && curl -sL https://raw.githubusercontent.com/golang/dep/v${DEP_VERSION}/install.sh | sh     && mkdir -p /opt     && mkdir -p /home/${user}/.vim/pack/plugins/start     && mkdir -p /home/${user}/.vim/syntax     && rm /usr/bin/vi && ln -s /usr/bin/vim /usr/bin/vi     && go get golang.org/x/tools/cmd/gorename     && go get github.com/nsf/gocode     && go get github.com/mfuentesg/ksd     && go get github.com/jenkins-x/**-release-version     && go get github.com/gohugoio/hugo     && $GOPATH/bin/gocode set propose-builtins true     && git clone https://github.com/fatih/vim-go.git /home/${user}/.vim/pack/plugins/start/vim-go     && git clone https://github.com/manniwood/vim-buf.git /home/${user}/.vim/pack/plugins/start/vim-buf     && mv /tmp/colors /home/${user}/.vim     && mv /tmp/syntax /home/${user}/.vim     && chown -R ${user}:${group} /home/${user}] 
+[36mINFO[0m[0083] Pushing layer gcr.io/jenkinsxio/cache:dc8eff532e019a902244e01ab4118bf243a2bea83cb13965efbb97acfb5b2379 to cache now 
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/community/x86_64/APKINDEX.tar.gz
+(1/139) Installing ncurses-terminfo-base (6.1_p20180818-r1)
+(2/139) Installing ncurses-terminfo (6.1_p20180818-r1)
+(3/139) Installing ncurses-libs (6.1_p20180818-r1)
+(4/139) Installing readline (7.0.003-r0)
+(5/139) Installing bash (4.4.19-r1)
+Executing bash-4.4.19-r1.post-install
+(6/139) Installing bash-completion (2.8-r0)
+(7/139) Installing nghttp2-libs (1.32.0-r0)
+(8/139) Installing libssh2 (1.8.2-r0)
+(9/139) Installing libcurl (7.61.1-r2)
+(10/139) Installing curl (7.61.1-r2)
+(11/139) Installing libmnl (1.0.4-r0)
+(12/139) Installing jansson (2.11-r0)
+(13/139) Installing libnftnl-libs (1.1.1-r0)
+(14/139) Installing iptables (1.6.2-r0)
+(15/139) Installing device-mapper-libs (2.02.178-r0)
+(16/139) Installing libltdl (2.4.6-r5)
+(17/139) Installing libseccomp (2.3.3-r1)
+(18/139) Installing docker (18.06.1-r0)
+Executing docker-18.06.1-r0.pre-install
+(19/139) Installing docker-bash-completion (18.06.1-r0)
+(20/139) Installing dos2unix (7.4.0-r0)
+(21/139) Installing ldns (1.7.0-r0)
+(22/139) Installing drill (1.7.0-r0)
+(23/139) Installing binutils (2.30-r5)
+(24/139) Installing gmp (6.1.2-r1)
+(25/139) Installing isl (0.18-r0)
+(26/139) Installing libgomp (6.4.0-r9)
+(27/139) Installing libatomic (6.4.0-r9)
+(28/139) Installing pkgconf (1.5.3-r0)
+(29/139) Installing libgcc (6.4.0-r9)
+(30/139) Installing mpfr3 (3.1.5-r1)
+(31/139) Installing mpc1 (1.0.3-r1)
+(32/139) Installing libstdc++ (6.4.0-r9)
+(33/139) Installing gcc (6.4.0-r9)
+2019/05/13 10:25:35 pushed blob: sha256:7cd56ce41554ffdd4575716b0f9ee8c84a01a79fef3e666e495efa5dbccf0f4a
+2019/05/13 10:25:35 pushed blob: sha256:5b042dd728a856977f4cb988a80c9c9d4e246290a146b0065e1057b666718195
+(34/139) Installing expat (2.2.5-r0)
+(35/139) Installing pcre2 (10.31-r0)
+(36/139) Installing git (2.18.1-r0)
+(37/139) Installing git-bash-completion (2.18.1-r0)
+(38/139) Installing libbz2 (1.0.6-r6)
+(39/139) Installing perl (5.26.3-r0)
+(40/139) Installing perl-error (0.17026-r0)
+(41/139) Installing perl-git (2.18.1-r0)
+(42/139) Installing libidn (1.34-r1)
+(43/139) Installing perl-net-libidn (0.12-r4)
+(44/139) Installing perl-net-ssleay (1.85-r1)
+(45/139) Installing perl-io-socket-ssl (2.048-r1)
+(46/139) Installing perl-net-smtp-ssl (1.04-r0)
+(47/139) Installing perl-digest-sha1 (2.13-r9)
+(48/139) Installing perl-digest-hmac (1.03-r0)
+(49/139) Installing perl-authen-sasl (2.16-r1)
+(50/139) Installing git-email (2.18.1-r0)
+(51/139) Installing git-perl (2.18.1-r0)
+(52/139) Installing libgpg-error (1.30-r0)
+(53/139) Installing libassuan (2.5.1-r0)
+(54/139) Installing libcap (2.25-r1)
+(55/139) Installing pinentry (1.1.0-r0)
+Executing pinentry-1.1.0-r0.post-install
+(56/139) Installing libgcrypt (1.8.3-r0)
+2019/05/13 10:25:37 gcr.io/jenkinsxio/cache:dc8eff532e019a902244e01ab4118bf243a2bea83cb13965efbb97acfb5b2379: digest: sha256:e72f3ab2f6b4969e2a4c40682af54f604baef27f14af2d0854fd357cd0f0ca2f size: 425
+(57/139) Installing nettle (3.4.1-r0)
+(58/139) Installing libffi (3.2.1-r4)
+(59/139) Installing p11-kit (0.23.10-r0)
+(60/139) Installing libtasn1 (4.13-r0)
+(61/139) Installing libunistring (0.9.7-r0)
+(62/139) Installing gnutls (3.6.7-r0)
+(63/139) Installing libksba (1.3.5-r0)
+(64/139) Installing db (5.3.28-r0)
+(65/139) Installing libsasl (2.1.26-r14)
+(66/139) Installing libldap (2.4.46-r0)
+(67/139) Installing npth (1.5-r1)
+(68/139) Installing sqlite-libs (3.25.3-r0)
+(69/139) Installing gnupg (2.2.8-r0)
+(70/139) Installing pcre (8.42-r0)
+(71/139) Installing grep (3.1-r2)
+(72/139) Installing oniguruma (6.8.2-r0)
+(73/139) Installing jq (1.6_rc1-r1)
+(74/139) Installing musl-dev (1.1.19-r10)
+(75/139) Installing libc-dev (0.7.1-r0)
+(76/139) Installing libc6-compat (1.1.19-r10)
+(77/139) Installing make (4.2.1-r2)
+(78/139) Installing ncurses (6.1_p20180818-r1)
+(79/139) Installing libattr (2.4.47-r7)
+(80/139) Installing libacl (2.2.52-r5)
+(81/139) Installing coreutils (8.29-r2)
+(82/139) Installing multitail (6.4.2-r1)
+(83/139) Installing libpcap (1.8.1-r1)
+(84/139) Installing ngrep (1.45-r4)
+(85/139) Installing nmap (7.70-r1)
+(86/139) Installing p11-kit-trust (0.23.10-r0)
+(87/139) Installing java-cacerts (1.0-r0)
+(88/139) Installing nspr (4.19-r0)
+(89/139) Installing nss (3.36.1-r1)
+(90/139) Installing libxau (1.0.8-r2)
+(91/139) Installing libbsd (0.8.6-r2)
+(92/139) Installing libxdmcp (1.1.2-r4)
+(93/139) Installing libxcb (1.13-r2)
+(94/139) Installing libx11 (1.6.6-r0)
+(95/139) Installing libxcomposite (0.4.4-r1)
+(96/139) Installing libxext (1.3.3-r2)
+(97/139) Installing libxi (1.7.9-r1)
+(98/139) Installing libxrender (0.9.10-r2)
+(99/139) Installing libxtst (1.2.3-r1)
+(100/139) Installing alsa-lib (1.1.6-r0)
+(101/139) Installing libpng (1.6.37-r0)
+(102/139) Installing freetype (2.9.1-r1)
+(103/139) Installing giflib (5.1.4-r2)
+(104/139) Installing libjpeg-turbo (1.5.3-r4)
+(105/139) Installing openjdk8-jre-lib (8.212.04-r0)
+(106/139) Installing java-common (0.1-r0)
+(107/139) Installing krb5-conf (1.0-r1)
+(108/139) Installing libcom_err (1.44.2-r0)
+(109/139) Installing keyutils-libs (1.5.10-r0)
+(110/139) Installing libverto (0.3.0-r1)
+(111/139) Installing krb5-libs (1.15.4-r0)
+(112/139) Installing lcms2 (2.9-r1)
+(113/139) Installing pcsc-lite-libs (1.8.23-r1)
+(114/139) Installing lksctp-tools (1.0.17-r0)
+(115/139) Installing openjdk8-jre-base (8.212.04-r0)
+(116/139) Installing openjdk8-jre (8.212.04-r0)
+(117/139) Installing openjdk8 (8.212.04-r0)
+(118/139) Installing openssh-keygen (7.7_p1-r4)
+(119/139) Installing openssh-client (7.7_p1-r4)
+(120/139) Installing libcrypto1.0 (1.0.2r-r0)
+(121/139) Installing libssl1.0 (1.0.2r-r0)
+(122/139) Installing openssl (1.0.2r-r0)
+(123/139) Installing py-crcmod (1.7-r1)
+(124/139) Installing gdbm (1.13-r1)
+(125/139) Installing python2 (2.7.15-r1)
+(126/139) Installing py2-crcmod (1.7-r1)
+(127/139) Installing linux-pam (1.3.0-r0)
+(128/139) Installing shadow (4.5-r0)
+(129/139) Installing tar (1.32-r0)
+(130/139) Installing terraform (0.11.7-r0)
+(131/139) Installing tig (2.3.3-r1)
+(132/139) Installing libevent (2.1.8-r5)
+(133/139) Installing tmux (2.7-r0)
+(134/139) Installing tree (1.7.0-r1)
+(135/139) Installing unzip (6.0-r4)
+(136/139) Installing lua5.3-libs (5.3.5-r2)
+(137/139) Installing vim (8.1.0115-r0)
+(138/139) Installing docker-vim (18.06.1-r0)
+(139/139) Installing wget (1.20.3-r0)
+Executing busybox-1.28.4-r2.trigger
+Executing ca-certificates-20171114-r3.trigger
+Executing java-common-0.1-r0.trigger
+OK: 628 MiB in 153 packages
+ARCH = amd64
+OS = linux
+Will install into /home/developer/go-workspace/bin
+Fetching https://github.com/golang/dep/releases/latest..
+Release Tag = 0.5.2
+Fetching https://github.com/golang/dep/releases/tag/0.5.2..
+Fetching https://github.com/golang/dep/releases/download/0.5.2/dep-linux-amd64..
+Setting executable permissions.
+Moving executable to /home/developer/go-workspace/bin/dep
+propose-builtins true
+Cloning into '/home/developer/.vim/pack/plugins/start/vim-go'...
+Cloning into '/home/developer/.vim/pack/plugins/start/vim-buf'...
+[36mINFO[0m[0295] Taking snapshot of full filesystem...        
+[36mINFO[0m[0300] Adding whiteout for /root/.cache/go-build/13/13f64ae7b811ae2436591460dee108aa3da2dd22d4edea3b47368ba3470ae2d4-a 
+[36mINFO[0m[0300] Adding whiteout for /tmp/syntax              
+[36mINFO[0m[0300] Adding whiteout for /root/.cache/go-build/51/512dc84ac51c7dd7e18cafe759d5549565c3ef8b85756e5539d2b95e620135dc-a 
+[36mINFO[0m[0300] Adding whiteout for /tmp/colors              
+[36mINFO[0m[0300] Adding whiteout for /root/.cache/go-build/0d/0dfa10e2451216f604afb73503c81ede431b837f0e58d6525be318107c231512-d 
+[36mINFO[0m[0317] ignoring socket gocode-daemon.all, not adding to tar 
+[36mINFO[0m[0355] Pushing layer gcr.io/jenkinsxio/cache:57591a0dd87b948a11147633bc51e346b507cf668afcb806f255e34e84bb30b5 to cache now 
+[36mINFO[0m[0356] COPY --from=** /usr/bin/** /usr/local/bin/** 
+[36mINFO[0m[0356] Taking snapshot of files...                  
+2019/05/13 10:30:08 pushed blob: sha256:30c1a78e5531029146a50ee9d973c43b68336580cd4cab3766242d9118658478
+[36mINFO[0m[0360] COPY --from=kubectl /usr/local/bin/kubectl /usr/local/bin/kubectl 
+[36mINFO[0m[0360] Taking snapshot of files...                  
+[36mINFO[0m[0361] COPY --from=helm /usr/local/bin/helm /usr/local/bin/helm 
+[36mINFO[0m[0361] Taking snapshot of files...                  
+[36mINFO[0m[0362] COPY --from=gcloud /google-cloud-sdk /usr/local/google-cloud-sdk 
+[36mINFO[0m[0365] Taking snapshot of files...                  
+[36mINFO[0m[0371] COPY --from=groovy /opt/groovy /opt/groovy   
+[36mINFO[0m[0371] Taking snapshot of files...                  
+[36mINFO[0m[0372] ENV PATH /usr/local/google-cloud-sdk/bin:$PATH 
+[36mINFO[0m[0372] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0372] RUN ln -s /lib /lib64     && gcloud config set core/disable_usage_reporting true     && gcloud config set component_manager/disable_update_check true     && gcloud config set metrics/environment github_docker_image 
+[36mINFO[0m[0372] cmd: /bin/sh                                 
+[36mINFO[0m[0372] args: [-c ln -s /lib /lib64     && gcloud config set core/disable_usage_reporting true     && gcloud config set component_manager/disable_update_check true     && gcloud config set metrics/environment github_docker_image] 
+Updated property [core/disable_usage_reporting].
+Updated property [component_manager/disable_update_check].
+Updated property [metrics/environment].
+[36mINFO[0m[0376] Taking snapshot of full filesystem...        
+[36mINFO[0m[0393] RUN ln -s "${GROOVY_HOME}/bin/grape" /usr/bin/grape     && ln -s "${GROOVY_HOME}/bin/groovy" /usr/bin/groovy     && ln -s "${GROOVY_HOME}/bin/groovyc" /usr/bin/groovyc     && ln -s "${GROOVY_HOME}/bin/groovyConsole" /usr/bin/groovyConsole     && ln -s "${GROOVY_HOME}/bin/groovydoc" /usr/bin/groovydoc     && ln -s "${GROOVY_HOME}/bin/groovysh" /usr/bin/groovysh     && ln -s "${GROOVY_HOME}/bin/java2groovy" /usr/bin/java2groovy 
+[36mINFO[0m[0393] cmd: /bin/sh                                 
+[36mINFO[0m[0393] args: [-c ln -s "${GROOVY_HOME}/bin/grape" /usr/bin/grape     && ln -s "${GROOVY_HOME}/bin/groovy" /usr/bin/groovy     && ln -s "${GROOVY_HOME}/bin/groovyc" /usr/bin/groovyc     && ln -s "${GROOVY_HOME}/bin/groovyConsole" /usr/bin/groovyConsole     && ln -s "${GROOVY_HOME}/bin/groovydoc" /usr/bin/groovydoc     && ln -s "${GROOVY_HOME}/bin/groovysh" /usr/bin/groovysh     && ln -s "${GROOVY_HOME}/bin/java2groovy" /usr/bin/java2groovy] 
+[36mINFO[0m[0393] Pushing layer gcr.io/jenkinsxio/cache:faa8a5be5048b8f4662574a41d02084af5f90774815ba939f041444c39bcffc8 to cache now 
+[36mINFO[0m[0393] Taking snapshot of full filesystem...        
+2019/05/13 10:30:45 pushed blob: sha256:8dfeb09b0ff9c7bfc24640c84f9f78755f9e88f2967a88b382a3e7754323ca8c
+2019/05/13 10:30:46 pushed blob: sha256:8c3f068c566c7dc5c3e388d77be1b9c8c66eca300decb640556d282760618ee5
+2019/05/13 10:30:48 gcr.io/jenkinsxio/cache:faa8a5be5048b8f4662574a41d02084af5f90774815ba939f041444c39bcffc8: digest: sha256:fe7b0ea0692bb3349ba74ed5303aa15dd165fdd6b4d1fc551c36cee362d5d014 size: 428
+[36mINFO[0m[0409] RUN curl -sL https://pre-commit.com/install-local.py | python - 
+[36mINFO[0m[0409] cmd: /bin/sh                                 
+[36mINFO[0m[0409] args: [-c curl -sL https://pre-commit.com/install-local.py | python -] 
+[36mINFO[0m[0409] Pushing layer gcr.io/jenkinsxio/cache:d75c1b3a61820c5a55e9e27eb987dcaed79a1f99aae148d648d1cad7f9a97910 to cache now 
+Downloading https://pypi.python.org/packages/d4/0c/9840c08189e030873387a73b90ada981885010dd9aea134d6de30cd24cb8/virtualenv-15.1.0.tar.gz
+New python executable in /root/.pre-commit-venv/bin/python
+Installing setuptools, pip, wheel...2019/05/13 10:31:01 pushed blob: sha256:74c4280db58bf191180b843bf5023c2260b954227eedb16b9b5e94e7d3dd3404
+2019/05/13 10:31:01 pushed blob: sha256:228c7a8e7769f74a96ce8425b825685a5b4404a88b0a2fbdc0b22a261fe81670
+2019/05/13 10:31:02 gcr.io/jenkinsxio/cache:d75c1b3a61820c5a55e9e27eb987dcaed79a1f99aae148d648d1cad7f9a97910: digest: sha256:df6be57d98d4db7c319be19128d7b824e3d4727fd6d16b39c5af7c72963a0769 size: 424
+done.
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7.
+Collecting pre-commit
+  Downloading https://files.pythonhosted.org/packages/d5/81/83ba6ac96d03c12ddbe987a177651ee9e35cc2a1567cc317d2556ac4acf4/pre_commit-1.16.1-py2.py3-none-any.whl (152kB)
+Collecting nodeenv>=0.11.1 (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/00/6e/ed417bd1ed417ab3feada52d0c89ab0ed87d150f91590badf84273e047c9/nodeenv-1.3.3.tar.gz
+Collecting importlib-metadata (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/10/6a/4a004847da97ca878f08c57241a407502469ec16cfc49e745d3569916fe2/importlib_metadata-0.11-py2.py3-none-any.whl
+Collecting importlib-resources; python_version < "3.7" (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/2f/f7/b4aa02cdd3ee7ebba375969d77c00826aa15c5db84247d23c89522dccbfa/importlib_resources-1.0.2-py2.py3-none-any.whl
+Collecting toml (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/a2/12/ced7105d2de62fa7c8fb5fce92cc4ce66b57c95fb875e9318dba7f8c5db0/toml-0.10.0-py2.py3-none-any.whl
+Collecting futures; python_version < "3.2" (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl
+Collecting cfgv>=1.4.0 (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/e7/38/75270ab931b1a0a14a57c7f5120e1742fc531b136c2f1ed84c7f6e64565f/cfgv-1.6.0-py2.py3-none-any.whl
+Collecting pyyaml (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/9f/2c/9417b5c774792634834e730932745bc09a7d36754ca00acf1ccd1ac2594d/PyYAML-5.1.tar.gz (274kB)
+Collecting identify>=1.0.0 (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/4a/91/73aefd8ef3cdb9470393f688987ae1b5edccf8923c9182ca74100bcbd725/identify-1.4.3-py2.py3-none-any.whl (97kB)
+Collecting aspy.yaml (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/c0/15/8f38955cbd3bf2f1bfbf7bec2a22517cdd098aa8eee60dafe49b2f7fd405/aspy.yaml-1.2.0-py2.py3-none-any.whl
+Collecting six (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Collecting virtualenv>=15.2 (from pre-commit)
+  Downloading https://files.pythonhosted.org/packages/4f/ba/6f9315180501d5ac3e707f19fcb1764c26cc6a9a31af05778f7c2383eadb/virtualenv-16.5.0-py2.py3-none-any.whl (2.0MB)
+Collecting configparser; python_version < "3" (from importlib-metadata->pre-commit)
+  Downloading https://files.pythonhosted.org/packages/ba/05/6c96328e92e625fc31445d24d75a2c92ef9ba34fc5b037fe69693c362a0d/configparser-3.7.4-py2.py3-none-any.whl
+Collecting contextlib2; python_version < "3" (from importlib-metadata->pre-commit)
+  Downloading https://files.pythonhosted.org/packages/a2/71/8273a7eeed0aff6a854237ab5453bc9aa67deb49df4832801c21f0ff3782/contextlib2-0.5.5-py2.py3-none-any.whl
+Collecting pathlib2; python_version == "3.4.*" or python_version < "3" (from importlib-metadata->pre-commit)
+  Downloading https://files.pythonhosted.org/packages/2a/46/c696dcf1c7aad917b39b875acdc5451975e3a9b4890dca8329983201c97a/pathlib2-2.3.3-py2.py3-none-any.whl
+Collecting zipp>=0.5 (from importlib-metadata->pre-commit)
+  Downloading https://files.pythonhosted.org/packages/a4/cd/80a10d136899d5128ad79685ade788e5d8b48ccd4c666370d52b2a9331ab/zipp-0.5.0-py2.py3-none-any.whl
+Collecting typing; python_version < "3.5" (from importlib-resources; python_version < "3.7"->pre-commit)
+  Downloading https://files.pythonhosted.org/packages/cc/3e/29f92b7aeda5b078c86d14f550bf85cff809042e3429ace7af6193c3bc9f/typing-3.6.6-py2-none-any.whl
+Collecting scandir; python_version < "3.5" (from pathlib2; python_version == "3.4.*" or python_version < "3"->importlib-metadata->pre-commit)
+  Downloading https://files.pythonhosted.org/packages/df/f5/9c052db7bd54d0cbf1bc0bb6554362bba1012d03e5888950a4f5c5dadc4e/scandir-1.10.0.tar.gz
+Building wheels for collected packages: nodeenv, pyyaml, scandir
+  Building wheel for nodeenv (setup.py): started
+  Building wheel for nodeenv (setup.py): finished with status 'done'
+  Stored in directory: /root/.cache/pip/wheels/7b/6c/23/eb26369b77904c8963fae9e64338b0f0b948b4d59710760834
+  Building wheel for pyyaml (setup.py): started
+  Building wheel for pyyaml (setup.py): finished with status 'done'
+  Stored in directory: /root/.cache/pip/wheels/ad/56/bc/1522f864feb2a358ea6f1a92b4798d69ac783a28e80567a18b
+  Building wheel for scandir (setup.py): started
+  Building wheel for scandir (setup.py): finished with status 'done'
+  Stored in directory: /root/.cache/pip/wheels/91/95/75/19c98a91239878abbc7c59970abd3b4e0438a7dd5b61778335
+Successfully built nodeenv pyyaml scandir
+Installing collected packages: nodeenv, configparser, contextlib2, six, scandir, pathlib2, zipp, importlib-metadata, typing, importlib-resources, toml, futures, cfgv, pyyaml, identify, aspy.yaml, virtualenv, pre-commit
+Successfully installed aspy.yaml-1.2.0 cfgv-1.6.0 configparser-3.7.4 contextlib2-0.5.5 futures-3.2.0 identify-1.4.3 importlib-metadata-0.11 importlib-resources-1.0.2 nodeenv-1.3.3 pathlib2-2.3.3 pre-commit-1.16.1 pyyaml-5.1 scandir-1.10.0 six-1.12.0 toml-0.10.0 typing-3.6.6 virtualenv-16.5.0 zipp-0.5.0
+Done.
+*******************************************************************************
+Installing pre-commit to /root/bin/pre-commit
+*******************************************************************************
+It looks like /root/bin is not on your path
+You may want to add it.
+Often this does the trick: source ~/.profile
+[36mINFO[0m[0422] Taking snapshot of full filesystem...        
+[36mINFO[0m[0438] Pushing layer gcr.io/jenkinsxio/cache:d79c8b9f74cff60e10069afb4899d413ddd944d1a2b61f4de528abfd7e827f44 to cache now 
+[36mINFO[0m[0438] ENV PATH /home/${user}/bin:$PATH             
+[36mINFO[0m[0438] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0438] USER ${user}                                 
+[36mINFO[0m[0438] cmd: USER                                    
+[36mINFO[0m[0438] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0438] RUN go get -u github.com/google/ko/cmd/ko     && go get -u github.com/go-delve/delve/cmd/dlv 
+[36mINFO[0m[0438] cmd: /bin/sh                                 
+[36mINFO[0m[0438] args: [-c go get -u github.com/google/ko/cmd/ko     && go get -u github.com/go-delve/delve/cmd/dlv] 
+2019/05/13 10:31:30 pushed blob: sha256:abbec168722b96a8f8c7e44b29f4bfe25f402961fe34511766d6e548dea25911
+2019/05/13 10:31:32 pushed blob: sha256:4c3c2ce407c659da833b0f88eeb37a51dd44456f3cbee0c3f3e3c620c73cd05a
+2019/05/13 10:31:34 gcr.io/jenkinsxio/cache:d79c8b9f74cff60e10069afb4899d413ddd944d1a2b61f4de528abfd7e827f44: digest: sha256:a67a8618b37d87c7b48113db0414255c4630941e8963b70b871182b3df56c798 size: 429
+2019/05/13 10:31:36 pushed blob: sha256:4307b379ba36696a87bb42a70360da04d0bb50b6f10fdad1d1c9363a0ff6974d
+2019/05/13 10:31:37 gcr.io/jenkinsxio/cache:57591a0dd87b948a11147633bc51e346b507cf668afcb806f255e34e84bb30b5: digest: sha256:5e203bafce20ab817264d9fafc3feef95ce093a268164d4e9fc9f899992d3cf4 size: 431
+[36mINFO[0m[0477] Taking snapshot of full filesystem...        
+[36mINFO[0m[0503] Pushing layer gcr.io/jenkinsxio/cache:11b952436e02f96c895dba0cbbf3f9b4a04e8ca8eb50c73e9a1cb11e479b6389 to cache now 
+[36mINFO[0m[0503] WORKDIR /home/$user/go-workspace             
+[36mINFO[0m[0503] cmd: workdir                                 
+[36mINFO[0m[0503] Changed working directory to /home/developer/go-workspace 
+[36mINFO[0m[0503] No files changed in this command, skipping snapshotting. 
+2019/05/13 10:32:35 pushed blob: sha256:f91e5d419933e92279ae8372cf83ff83d6a6c0e2f54e934aef7eb3b568b7bf64
+2019/05/13 10:32:44 pushed blob: sha256:ef6e1c481bca2393c13ea0f6d17c6ec1737d37987a41e41e4301c4e4c82c8e3b
+2019/05/13 10:32:46 gcr.io/jenkinsxio/cache:11b952436e02f96c895dba0cbbf3f9b4a04e8ca8eb50c73e9a1cb11e479b6389: digest: sha256:acba2f3d7d3248a034ed5a0d1c0b445e821d12ac876b6f915f541b6a6f5c806a size: 429
+2019/05/13 10:32:46 existing blob: sha256:952c3806fd1a59736d7e729f9a40aea3b2511dce11b957e5c3e96f155a185eb3
+2019/05/13 10:32:46 existing blob: sha256:cd784148e3483c2c86c50a48e535302ab0288bebd587accf40b714fffd0646b3
+2019/05/13 10:32:46 existing blob: sha256:ee1f873f86f9fc374251c1bcfe3341f021c87b1b49f442f83db86f5a831d8650
+2019/05/13 10:32:46 existing blob: sha256:7e273b0dfc4495c47d06ba7dd422674d4a1afeb5e938975c26d4524e8eaa56aa
+2019/05/13 10:32:46 existing blob: sha256:4c3c2ce407c659da833b0f88eeb37a51dd44456f3cbee0c3f3e3c620c73cd05a
+2019/05/13 10:32:46 existing blob: sha256:8c3f068c566c7dc5c3e388d77be1b9c8c66eca300decb640556d282760618ee5
+2019/05/13 10:32:46 existing blob: sha256:228c7a8e7769f74a96ce8425b825685a5b4404a88b0a2fbdc0b22a261fe81670
+2019/05/13 10:32:46 existing blob: sha256:7cd56ce41554ffdd4575716b0f9ee8c84a01a79fef3e666e495efa5dbccf0f4a
+2019/05/13 10:32:46 existing blob: sha256:7172cd197d12dd5ce6d39022f4d8ce745d02517892209d2704ae484734e7cd2a
+2019/05/13 10:32:46 existing blob: sha256:ef6e1c481bca2393c13ea0f6d17c6ec1737d37987a41e41e4301c4e4c82c8e3b
+2019/05/13 10:32:46 existing blob: sha256:4307b379ba36696a87bb42a70360da04d0bb50b6f10fdad1d1c9363a0ff6974d
+2019/05/13 10:32:49 pushed blob: sha256:b00a0e58295fe9f2706c36811352f6e81bfb43c6cd9e1848f483335b0907c599
+2019/05/13 10:32:49 pushed blob: sha256:2f43292af2700f7242fc860fbddc739ffaf5e1ca6453d47fc2babbcd1559ac00
+2019/05/13 10:32:49 pushed blob: sha256:3c071610811ae79bc742bc0ba89f0a34c3b80e2a1ca7b56d9a0783e0828428a7
+2019/05/13 10:32:54 pushed blob: sha256:46970c4c6b03a038d717c27f91afa742b121dd3891d2b38fa7cb5044a52be2a7
+2019/05/13 10:32:57 pushed blob: sha256:182dab710fb78a5f353d41875f6c12a9177e700afcfc70087d7208c7310037f1
+2019/05/13 10:32:57 pushed blob: sha256:ea90fd5dbc7367545735ec84492a862ded0b91b2d501f8b105defccd2fe11330
+2019/05/13 10:33:02 pushed blob: sha256:a3f28314f9197d8e512eda7fa179d4e3e5c5b885171066e626fceb702f3d3ecd
+2019/05/13 10:33:02 pushed blob: sha256:e60a60d2709cadbd6d24fdece3a550d39d02583ccf83bf722be969aa089526ac
+2019/05/13 10:33:04 gcr.io/jenkinsxio/dev-env:0.0.0-SNAPSHOT-PR-22-3: digest: sha256:0a0388bec602fe3d86d86798e74006bd481985ab8281f1d9b91f01d142a94c19 size: 3206
