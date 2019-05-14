@@ -1,0 +1,45 @@
+Step: build-step-git-source-jenkins-x-**-docs-pr-1512-tekto-d5wxl:
+
+{"level":"warn","ts":1557845809.9730399,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1557845842.0133572,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/jenkins-x/**-docs @ fce6447e35d5c8afc2879298074cc49f69e058c5 in path /workspace/source"}
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-05-14T14:57:30Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:c7576641862f3c82223e0a59416c5187b9b32c3f,1512:fce6447e35d5c8afc2879298074cc49f69e058c5
+ran git fetch origin fce6447e35d5c8afc2879298074cc49f69e058c5: c7576641862f3c82223e0a59416c5187b9b32c3f: in 
+Unshallowed git repo in 
+ran git checkout master in 
+ran git reset --hard c7576641862f3c82223e0a59416c5187b9b32c3f in 
+ran clean --force -d . in 
+ran git merge fce6447e35d5c8afc2879298074cc49f69e058c5 in 
+Step: build-step-version:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-build-website:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 478 |  81  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   1 |   1  
+  Static files     | 253 | 253  
+  Processed images |   0 |   0  
+  Aliases          |  64 |   9  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 41366 ms
+Step: build-step-build-and-push-image:
+
+[36mINFO[0m[0026] Downloading base image abiosoft/caddy        
+ERROR: logging before flag.Parse: E0514 15:00:18.875118      11 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0514 15:00:22.137966      11 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0043] Error while retrieving image from cache: Get https://index.docker.io/v2/: net/http: TLS handshake timeout 
+[36mINFO[0m[0043] Downloading base image abiosoft/caddy        
+error building image: Get https://index.docker.io/v2/: net/http: TLS handshake timeout
+Step: build-step-make-preview:
+
+Step: build-step-**-preview:
+
