@@ -1,0 +1,30 @@
+Step: build-step-git-source-cloudbees-**ui-backend-pr-260-t-7j8vf:
+
+{"level":"warn","ts":1557849603.7020838,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1557849663.0017197,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/cloudbees/**ui-backend @ 2328dbb50d8d60b4bc043667bd9d9ecd8ba3b2d1 in path /workspace/source"}
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-05-14T16:01:04Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:1d191580a9d85426ad15dd04251de23fdc4b2c89,260:2328dbb50d8d60b4bc043667bd9d9ecd8ba3b2d1
+ran git fetch --unshallow origin 2328dbb50d8d60b4bc043667bd9d9ecd8ba3b2d1: 1d191580a9d85426ad15dd04251de23fdc4b2c89: in 
+ran git checkout master in 
+ran git reset --hard 1d191580a9d85426ad15dd04251de23fdc4b2c89 in 
+ran clean --force -d . in 
+ran git merge 2328dbb50d8d60b4bc043667bd9d9ecd8ba3b2d1 in 
+Step: build-step-pr-**-credential-kaniko:
+
+/builder/home/kaniko-secret.json
+Step: build-step-pr-**-credential-sa:
+
+/builder/home/core-dev-gke-sa.key.json
+Step: build-step-warm-cache:
+
+Step: build-step-pr-build-image:
+
+[36mINFO[0m[0020] Downloading base image gcr.io/jenkinsxio/builder-go:0.1.451 
+[36mINFO[0m[0030] Error while retrieving image from cache: Get https://gcr.io/v2/: net/http: TLS handshake timeout 
+[36mINFO[0m[0030] Downloading base image gcr.io/jenkinsxio/builder-go:0.1.451 
+error building image: Get https://gcr.io/v2/: net/http: TLS handshake timeout
+Step: build-step-pr-e2e-test:
+
