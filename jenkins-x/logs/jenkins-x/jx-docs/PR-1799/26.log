@@ -1,0 +1,155 @@
+Step: build-step-credential-initializer-qkjmf:
+
+{"level":"warn","ts":1565211033.4090304,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565211033.4096253,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-working-dir-initializer-xjjjs:
+
+{"level":"warn","ts":1565211035.1323013,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565211035.2176282,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/preview\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-source-jenkins-x-**-docs-pr-1799-tekto-ht9z6:
+
+{"level":"warn","ts":1565211040.9302282,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565211048.0304844,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/jenkins-x/**-docs @ 4c7466d6288fc56128ea5d3721f783ab6a014542 in path /workspace/source"}
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-08-07T20:50:54Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:6c57a318b0c4ee2807c8d1edd739317bbc0b41ab,1799:4c7466d6288fc56128ea5d3721f783ab6a014542
+ran git remote update in 
+ran git fetch origin 4c7466d6288fc56128ea5d3721f783ab6a014542: 6c57a318b0c4ee2807c8d1edd739317bbc0b41ab: in 
+Unshallowed git repo in 
+ran git checkout master in 
+ran git reset --hard 6c57a318b0c4ee2807c8d1edd739317bbc0b41ab in 
+ran clean --force -d . in 
+ran git merge 4c7466d6288fc56128ea5d3721f783ab6a014542 in 
+Step: build-step-version:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-build-website:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 562 |  84  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   1 |   1  
+  Static files     | 266 | 266  
+  Processed images |   0 |   0  
+  Aliases          |  85 |   9  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 3403 ms
+Step: build-step-build-and-push-image:
+
+[36mINFO[0m[0000] Downloading base image abiosoft/caddy        
+ERROR: logging before flag.Parse: E0807 20:51:19.750446      12 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0807 20:51:19.756555      12 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:4a8ec766fa92dd45c7512ab9a03bc1efa8bdee5baa674bf7f572adee9d258b50: no such file or directory 
+[36mINFO[0m[0001] Downloading base image abiosoft/caddy        
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0009] EXPOSE 2015                                  
+[36mINFO[0m[0009] cmd: EXPOSE                                  
+[36mINFO[0m[0009] Adding exposed port: 2015/tcp                
+[36mINFO[0m[0009] WORKDIR /srv                                 
+[36mINFO[0m[0009] cmd: workdir                                 
+[36mINFO[0m[0009] Changed working directory to /srv            
+[36mINFO[0m[0009] Creating directory /srv                      
+[36mINFO[0m[0009] Taking snapshot of files...                  
+[36mINFO[0m[0009] Using files from context: [/workspace/source/tmp-website] 
+[36mINFO[0m[0009] COPY tmp-website .                           
+[36mINFO[0m[0010] Taking snapshot of files...                  
+2019/08/07 20:51:34 existing blob: sha256:642d58ba27b18b6c662df466efb071d9c741cc8597a52eb7306f1da96cbdac53
+2019/08/07 20:51:34 existing blob: sha256:994d2188c1188ca2ce3b92ce7e75b1d5647c46cae1456eaccdccea0ef29b9f2c
+2019/08/07 20:51:34 existing blob: sha256:938173c0ab3c5335b3c3e77a58c21259f10fe879841296a7d62e6a9e0036c2d0
+2019/08/07 20:51:34 existing blob: sha256:c14dfa736ca22bcde3b0a31a6064a6dec8798ed68a9db65ba976f33524df225a
+2019/08/07 20:51:34 existing blob: sha256:921b31ab772b38172fd9f942a40fae6db24decbd6706f67836260d47a72baab5
+2019/08/07 20:51:34 existing blob: sha256:8f452f8b3309da1fd012f42e7893bd469cb5d12e67aada13b324abcca8f20566
+2019/08/07 20:51:34 existing blob: sha256:86656c2d3ab6b73e4c035807c589441220207b18c96f540ac215b022b8894cc9
+2019/08/07 20:51:37 pushed blob: sha256:28ea6ee5c8fede21c687fc95371ae9bb89df4962a46c07ad7bd21cdce6ba331d
+2019/08/07 20:51:37 pushed blob: sha256:b62e9ec13add37ecf2a85779e57ea07659dab2563aea6fe56bfbb4576bcae813
+2019/08/07 20:51:46 pushed blob: sha256:cbbc4fbe2032539f1d317dc0f438cfa3d970aa799a8363734d937a77dd55ccfd
+2019/08/07 20:51:47 gcr.io/jenkins-x-infra/**-docs:0.0.0-SNAPSHOT-PR-1799-26: digest: sha256:ff347f9cc3070b66bfe38273da2378b847790c365c238fcfefa0b5eb9342003b size: 1728
+Step: build-step-make-preview:
+
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1799-26/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1799-26/" ../*/Chart.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1799-26/" values.yaml
+** step helm build
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x http://chartmuseum.jenkins-x.io
+Successfully added Helm repository jenkins-x.
+Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository releases.
+Step: build-step-**-preview:
+
+Creating a preview
+No author for commit: 8ac271939eb6e9ba8390f2bf0c92ec0dac8f74b0
+No author for commit: f215076df7bbfdeb6930f94f989ef23eaae424e4
+Commit author email is empty for: edaaf23ffd4883931b60dfb97aca7d90e8a401e0
+Looking for commits in: /workspace/source/
+No author for commit: 376272a194223af27e14c81f24fe8b99fca6746f
+No author for commit: 7b14b3fa02c755271baef440b5c809852757283d
+No author for commit: fe7dada5942bef76d7331a50500aea9f241c1aa8
+No author for commit: 602810f284679ef358cf11fde44e635dc04f6fe8
+No author for commit: 5c83763c1134bddc5bcc4a035d7ac347df04bb1c
+Commit author email is empty for: d958b45ae875590e12d94fb67db88448c782802a
+Looking for commits in: /workspace/source/
+No author for commit: d5db2ab80d0e30f61e1350a3cfddc5d6258768cd
+No author for commit: dbd2062f520b9446d7f3c67aabf7f0057c88784b
+No author for commit: 64783960bdd4f9630d4f17b7ccfccd64723dd8af
+No author for commit: 067494b641979bfcce14d562bb5c283bb9057879
+No author for commit: 51a48da197723d57667d4d026c71bd3b24f34bc1
+No author for commit: f5576ca86aadae364c9981d35dd4b7de6f7050be
+No author for commit: 25e46a906162cc61719d74d52591a446f263a6a2
+No author for commit: 22bd551e66935ae8d07fe53d8f3bd94eca51dc6f
+No author for commit: f53739f58eab24cf54b94cb5e12055dd9d25b7e8
+No author for commit: af91f09ff031a6972c4776a6670d307627973eb2
+No author for commit: f9d57529e94ab1c927fec39ae11199ce7f2a6133
+No author for commit: 90f6ccaf2c22d11d93b166b16a3045da96b77a9c
+No author for commit: 2402c678f4d09d5540be597318096ce6d19e5bc7
+No author for commit: 9bb8bb1128e27bce483fc746e05ed811c4b9ffc0
+No author for commit: cdbc6b00d318b105946958a0ec7ba85c89a63477
+No author for commit: 8187a04feaeb612c2602acc5dde8a5c4bf542bdb
+Commit author email is empty for: 1ac624d4e9ca8c3c7459f90af452d741e52c1e00
+Looking for commits in: /workspace/source/
+No author for commit: 2c3cb9148bd1ec083c52c30248bb5b1d9ffa3b04
+No author for commit: 4fd7b7859c07db4f67114bc719778532fd5ec38b
+No author for commit: b26750d32c10a8eef7a4d7b292e5b911bba762e4
+No author for commit: 91db624755d507bb549921cc3f95612c24988917
+PullRequest author email is empty
+expose:
+  config:
+    domain: infra.jrawlings.co.uk
+    exposer: Ingress
+    http: "true"
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+preview:
+  image:
+    repository: gcr.io/jenkins-x-infra/**-docs
+    tag: 0.0.0-SNAPSHOT-PR-1799-26
+Applying generated chart . YAML via kubectl in dir: /tmp/helm-template-workdir-158125377/preview/output
+job.batch/cleanup configured
+role.rbac.authorization.k8s.io/cleanup configured
+rolebinding.rbac.authorization.k8s.io/cleanup configured
+serviceaccount/cleanup configured
+configmap/exposecontroller configured
+role.rbac.authorization.k8s.io/expose configured
+rolebinding.rbac.authorization.k8s.io/expose configured
+serviceaccount/expose configured
+deployment.extensions/preview-preview configured
+service/**-docs configured
+Applying Helm hook post-upgrade YAML via kubectl in file: /tmp/helm-template-workdir-158125377/preview/helmHooks/preview/charts/expose/templates/job.yaml
+job.batch/expose created
+Waiting for helm post-upgrade hook Job expose to complete before removing it
+Deleting helm hook sources from file: /tmp/helm-template-workdir-158125377/preview/helmHooks/preview/charts/expose/templates/job.yaml
+job.batch "expose" deleted
+Removing Kubernetes resources from older releases using selector: jenkins.io/chart-release=preview,jenkins.io/version!=0.0.0-SNAPSHOT-PR-1799-26
+Updating PipelineActivities jenkins-x-**-docs-pr-1799-26 which has status Running
+Preview application is now available at: http://**-docs.**-jenkins-x-**-docs-pr-1799.infra.jrawlings.co.uk
+
