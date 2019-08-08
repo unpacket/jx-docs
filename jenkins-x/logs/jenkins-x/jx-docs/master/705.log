@@ -1,0 +1,102 @@
+Step: build-step-credential-initializer-qns5j:
+
+{"level":"warn","ts":1565283601.1221013,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565283601.1226172,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-working-dir-initializer-4hvjn:
+
+{"level":"warn","ts":1565283601.9354024,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565283601.936955,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-source-jenkins-x-**-docs-master-tekton-s5jbs:
+
+{"level":"warn","ts":1565283604.108759,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565283616.2409873,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/jenkins-x/**-docs @ v0.0.743 in path /workspace/source"}
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-08-08T17:00:17Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:e2b7755dbf77a16968ad5b64012f5871a4b592fe
+time="2019-08-08T17:00:17Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-step2:
+
+Cloning into 'jenkins-x-website'...
+Step: build-step-step3:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-step4:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 562 |  84  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   1 |   1  
+  Static files     | 266 | 266  
+  Processed images |   0 |   0  
+  Aliases          |  85 |   9  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 22086 ms
+Step: build-step-step5:
+
+/workspace/source/jenkins-x-website /workspace/source
+Generated Git credentials file /builder/home/git/credentials
+[master 3e00d5f] updated site
+ 555 files changed, 1726 insertions(+), 1726 deletions(-)
+To https://github.com/jenkins-x/jenkins-x-website.git
+   a2d66f4..3e00d5f  master -> master
+/workspace/source
+Step: build-step-changelog:
+
+Converted /workspace/source to an unshallow repository
+DEBUG: Using helmBinary helm with feature flag: template-mode
+Generating change log from git ref 6dba2f8ddce9fba3b7e55b08640daec7f8e9c401 => e2b7755dbf77a16968ad5b64012f5871a4b592fe
+DEBUG: merging pipeline secrets with local secrets
+DEBUG: merging pipeline secrets with local secrets
+DEBUG: Found commits:
+DEBUG:   commit e2b7755dbf77a16968ad5b64012f5871a4b592fe
+DEBUG:   Author: ************* <35031835+*************@users.noreply.github.com>
+DEBUG:   Date: Thu Aug  8 17:58:41 2019
+DEBUG:       
+Merge pull request #1809 from *************/bump-regex-version-2ab25892-b9fa-11e9-9b6c-9e4ee7c094a4
+
+chore(deps): bump https://github.com/jenkins-x/** from 2.0.571 to 2.0.573
+
+
+DEBUG:   commit fb660733bc56b5011aa61d3ffd1281043d6a628b
+DEBUG:   Author: ************* <jenkins-x@googlegroups.com>
+DEBUG:   Date: Thu Aug  8 16:32:52 2019
+DEBUG:       chore(deps): bump https://github.com/jenkins-x/** from 2.0.571 to 2.0.573
+
+Command run was `./build/linux/** step create pr regex --regex \s*release = "(.*)" --version 2.0.573 --files config.toml --repo https://github.com/jenkins-x/**-docs.git`
+
+
+
+WARNING: Failed to enrich commit fb660733bc56b5011aa61d3ffd1281043d6a628b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fb660733bc56b5011aa61d3ffd1281043d6a628b with issues: users.jenkins.io "x-0" already exists
+DEBUG: merging pipeline secrets with local secrets
+Finding issues in commit messages using git format
+DEBUG: Generated release notes:
+
+## Changes
+
+### Chores
+
+* deps: bump https://github.com/jenkins-x/** from 2.0.571 to 2.0.573
+
+### Dependency Updates
+
+| Dependency | Component | New Version | Old Version |
+| ---------- | --------- | ----------- | ----------- |
+| [jenkins-x/**](https://github.com/jenkins-x/**) |  | [2.0.573](https://github.com/jenkins-x/**/releases/tag/v2.0.573) | [2.0.571](https://github.com/jenkins-x/**/releases/tag/v2.0.571)|
+
+WARNING: No release found for jenkins-x/**-docs and tag v0.0.743 so creating a new release
+Updated the release information at https://github.com/jenkins-x/**-docs/releases/tag/v0.0.743
+Uploaded /workspace/source/dependency-matrix/matrix.yaml to release asset https://github.com/jenkins-x/**-docs/releases/download/v0.0.743/dependency-matrix.yaml
+Uploaded dependency-updates.yaml to release asset https://github.com/jenkins-x/**-docs/releases/download/v0.0.743/dependency-updates.yaml
+generated: /workspace/source/templates/release.yaml
+Created Release **-docs-0-0-743 resource in namespace **
+Updating PipelineActivity jenkins-x-**-docs-master-705 with version 0.0.743
+Updated PipelineActivities jenkins-x-**-docs-master-705 with release notes URL: https://github.com/jenkins-x/**-docs/releases/tag/v0.0.743
