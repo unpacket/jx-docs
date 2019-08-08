@@ -1,0 +1,80 @@
+Step: build-step-credential-initializer-69wqh:
+
+Unable to retrieve container logs for docker://aa3d69af3f478a272c8b642965d2b94ed68c0336cc3849043d5d7c535c14ad0a
+Step: build-step-working-dir-initializer-bk99r:
+
+Unable to retrieve container logs for docker://b70fc0e26c4c3d5220cc09e9b7c9a9530774e53d9554e8137bdb027220357221
+Step: build-step-place-tools:
+
+Unable to retrieve container logs for docker://802dc2987161d13707cc86c45673164fcc59fce0ae67825dba63e6da407d4520
+Step: build-step-git-source-jenkins-x-**-docs-master-tekton-n82ln:
+
+{"level":"warn","ts":1565275832.5042083,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565275840.121337,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/jenkins-x/**-docs @ v0.0.740 in path /workspace/source"}
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-08-08T14:50:41Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:f8e15968a9dab9d9b7eac7cb3d13678c1ba0cb7b
+time="2019-08-08T14:50:41Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-step2:
+
+Cloning into 'jenkins-x-website'...
+Step: build-step-step3:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-step4:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 562 |  84  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   1 |   1  
+  Static files     | 266 | 266  
+  Processed images |   0 |   0  
+  Aliases          |  85 |   9  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 1792 ms
+Step: build-step-step5:
+
+/workspace/source/jenkins-x-website /workspace/source
+Generated Git credentials file /builder/home/git/credentials
+[master 7a961d4] updated site
+ 558 files changed, 3139 insertions(+), 3139 deletions(-)
+To https://github.com/jenkins-x/jenkins-x-website.git
+   b05817e..7a961d4  master -> master
+/workspace/source
+Step: build-step-changelog:
+
+Converted /workspace/source to an unshallow repository
+DEBUG: Using helmBinary helm with feature flag: template-mode
+Generating change log from git ref e9bfaf7ffc13168b862035af25f26b3a98157895 => f8e15968a9dab9d9b7eac7cb3d13678c1ba0cb7b
+DEBUG: merging pipeline secrets with local secrets
+DEBUG: merging pipeline secrets with local secrets
+DEBUG: Found commits:
+DEBUG:   commit f8e15968a9dab9d9b7eac7cb3d13678c1ba0cb7b
+DEBUG:   Author: ************* <jenkins-x@googlegroups.com>
+DEBUG:   Date: Thu Aug  8 14:29:30 2019
+DEBUG:       updated ** API docs from 2.0.571
+
+
+
+WARNING: Failed to enrich commit f8e15968a9dab9d9b7eac7cb3d13678c1ba0cb7b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f8e15968a9dab9d9b7eac7cb3d13678c1ba0cb7b with issues: users.jenkins.io "x-0" already exists
+Finding issues in commit messages using git format
+DEBUG: Generated release notes:
+
+## Changes
+
+* updated ** API docs from 2.0.571
+
+WARNING: No release found for jenkins-x/**-docs and tag v0.0.740 so creating a new release
+Updated the release information at https://github.com/jenkins-x/**-docs/releases/tag/v0.0.740
+Uploaded /workspace/source/dependency-matrix/matrix.yaml to release asset https://github.com/jenkins-x/**-docs/releases/download/v0.0.740/dependency-matrix.yaml
+generated: /workspace/source/templates/release.yaml
+Created Release **-docs-0-0-740 resource in namespace **
+Updating PipelineActivity jenkins-x-**-docs-master-702 with version 0.0.740
+Updated PipelineActivities jenkins-x-**-docs-master-702 with release notes URL: https://github.com/jenkins-x/**-docs/releases/tag/v0.0.740
