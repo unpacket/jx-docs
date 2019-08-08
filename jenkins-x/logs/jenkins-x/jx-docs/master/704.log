@@ -1,0 +1,81 @@
+Step: build-step-credential-initializer-d4224:
+
+{"level":"warn","ts":1565282379.8996,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565282379.900107,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-working-dir-initializer-9p6r6:
+
+{"level":"warn","ts":1565282380.2662826,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565282380.2682316,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-source-jenkins-x-**-docs-master-tekton-vvgqw:
+
+{"level":"warn","ts":1565282382.6050625,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565282389.2052212,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/jenkins-x/**-docs @ v0.0.742 in path /workspace/source"}
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-08-08T16:39:50Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:6dba2f8ddce9fba3b7e55b08640daec7f8e9c401
+time="2019-08-08T16:39:50Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-step2:
+
+Cloning into 'jenkins-x-website'...
+Step: build-step-step3:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-step4:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 562 |  84  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   1 |   1  
+  Static files     | 266 | 266  
+  Processed images |   0 |   0  
+  Aliases          |  85 |   9  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 2339 ms
+Step: build-step-step5:
+
+/workspace/source/jenkins-x-website /workspace/source
+Generated Git credentials file /builder/home/git/credentials
+[master a2d66f4] updated site
+ 558 files changed, 3140 insertions(+), 3140 deletions(-)
+To https://github.com/jenkins-x/jenkins-x-website.git
+   466451c..a2d66f4  master -> master
+/workspace/source
+Step: build-step-changelog:
+
+Converted /workspace/source to an unshallow repository
+DEBUG: Using helmBinary helm with feature flag: template-mode
+Generating change log from git ref 928d57588a97194801c6ee32d5a9d4a6c48ae5f3 => 6dba2f8ddce9fba3b7e55b08640daec7f8e9c401
+DEBUG: merging pipeline secrets with local secrets
+DEBUG: merging pipeline secrets with local secrets
+DEBUG: Found commits:
+DEBUG:   commit 6dba2f8ddce9fba3b7e55b08640daec7f8e9c401
+DEBUG:   Author: ************* <jenkins-x@googlegroups.com>
+DEBUG:   Date: Thu Aug  8 16:33:59 2019
+DEBUG:       updated ** API docs from 2.0.573
+
+
+
+WARNING: Failed to enrich commit 6dba2f8ddce9fba3b7e55b08640daec7f8e9c401 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6dba2f8ddce9fba3b7e55b08640daec7f8e9c401 with issues: users.jenkins.io "x-0" already exists
+Finding issues in commit messages using git format
+DEBUG: Generated release notes:
+
+## Changes
+
+* updated ** API docs from 2.0.573
+
+WARNING: No release found for jenkins-x/**-docs and tag v0.0.742 so creating a new release
+Updated the release information at https://github.com/jenkins-x/**-docs/releases/tag/v0.0.742
+Uploaded /workspace/source/dependency-matrix/matrix.yaml to release asset https://github.com/jenkins-x/**-docs/releases/download/v0.0.742/dependency-matrix.yaml
+generated: /workspace/source/templates/release.yaml
+Created Release **-docs-0-0-742 resource in namespace **
+Updating PipelineActivity jenkins-x-**-docs-master-704 with version 0.0.742
+Updated PipelineActivities jenkins-x-**-docs-master-704 with release notes URL: https://github.com/jenkins-x/**-docs/releases/tag/v0.0.742
