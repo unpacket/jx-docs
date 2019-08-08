@@ -1,0 +1,92 @@
+Step: build-step-credential-initializer-8jsl5:
+
+{"level":"warn","ts":1565275845.4390197,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565275845.4413636,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-working-dir-initializer-h5t9t:
+
+{"level":"warn","ts":1565275846.411356,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565275846.4218225,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/preview\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-source-jenkins-x-**-docs-pr-1808-tekto-55qzq:
+
+{"level":"warn","ts":1565275848.1840253,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565275854.5218148,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/jenkins-x/**-docs @ ced687ad278154c24f8cc8aab168daa1daeab115 in path /workspace/source"}
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-08-08T14:50:55Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:f8e15968a9dab9d9b7eac7cb3d13678c1ba0cb7b,1808:ced687ad278154c24f8cc8aab168daa1daeab115
+ran git fetch --unshallow origin ced687ad278154c24f8cc8aab168daa1daeab115: f8e15968a9dab9d9b7eac7cb3d13678c1ba0cb7b: in 
+ran git checkout master in 
+ran git reset --hard f8e15968a9dab9d9b7eac7cb3d13678c1ba0cb7b in 
+ran clean --force -d . in 
+ran git merge ced687ad278154c24f8cc8aab168daa1daeab115 in 
+Step: build-step-version:
+
+Hugo Static Site Generator v0.49 linux/amd64 BuildDate: 2018-09-24T10:03:17Z
+Step: build-step-build-website:
+
+[?25lBuilding sites … [?25h[K
+                   | EN  | ZH   
++------------------+-----+-----+
+  Pages            | 562 |  84  
+  Paginator pages  |   3 |   0  
+  Non-page files   |   1 |   1  
+  Static files     | 266 | 266  
+  Processed images |   0 |   0  
+  Aliases          |  85 |   9  
+  Sitemaps         |   2 |   1  
+  Cleaned          |   0 |   0  
+
+Total in 1579 ms
+Step: build-step-build-and-push-image:
+
+[36mINFO[0m[0000] Downloading base image abiosoft/caddy        
+ERROR: logging before flag.Parse: E0808 14:51:14.190054      15 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0808 14:51:14.193658      15 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:4a8ec766fa92dd45c7512ab9a03bc1efa8bdee5baa674bf7f572adee9d258b50: no such file or directory 
+[36mINFO[0m[0001] Downloading base image abiosoft/caddy        
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] EXPOSE 2015                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 2015/tcp                
+[36mINFO[0m[0002] WORKDIR /srv                                 
+[36mINFO[0m[0002] cmd: workdir                                 
+[36mINFO[0m[0002] Changed working directory to /srv            
+[36mINFO[0m[0002] Creating directory /srv                      
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source/tmp-website] 
+[36mINFO[0m[0002] COPY tmp-website .                           
+[36mINFO[0m[0003] Taking snapshot of files...                  
+2019/08/08 14:51:21 existing blob: sha256:938173c0ab3c5335b3c3e77a58c21259f10fe879841296a7d62e6a9e0036c2d0
+2019/08/08 14:51:21 existing blob: sha256:8f452f8b3309da1fd012f42e7893bd469cb5d12e67aada13b324abcca8f20566
+2019/08/08 14:51:21 existing blob: sha256:642d58ba27b18b6c662df466efb071d9c741cc8597a52eb7306f1da96cbdac53
+2019/08/08 14:51:21 existing blob: sha256:921b31ab772b38172fd9f942a40fae6db24decbd6706f67836260d47a72baab5
+2019/08/08 14:51:21 existing blob: sha256:994d2188c1188ca2ce3b92ce7e75b1d5647c46cae1456eaccdccea0ef29b9f2c
+2019/08/08 14:51:21 existing blob: sha256:c14dfa736ca22bcde3b0a31a6064a6dec8798ed68a9db65ba976f33524df225a
+2019/08/08 14:51:21 existing blob: sha256:86656c2d3ab6b73e4c035807c589441220207b18c96f540ac215b022b8894cc9
+2019/08/08 14:51:24 pushed blob: sha256:b961cd4eb9511af3f1af3ff7fce9a871e7f359d01faa6a11ca781688a1706bd5
+2019/08/08 14:51:24 pushed blob: sha256:7d1584aec3b5c81b0c346f9319e5efe21c22af179b2f868b0c775f099e4326ce
+2019/08/08 14:51:33 pushed blob: sha256:2caef5afb6a1649dfbf2a19b2afe2fad792ce9b267712a438978a811972128ee
+2019/08/08 14:51:35 gcr.io/jenkins-x-infra/**-docs:0.0.0-SNAPSHOT-PR-1808-2: digest: sha256:8a1fe23c2361315c61a423dedf8ef19fd5f5fc7d98ac4843f73aa5ac893bbacc size: 1728
+Step: build-step-make-preview:
+
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1808-2/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1808-2/" ../*/Chart.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1808-2/" values.yaml
+** step helm build
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x http://chartmuseum.jenkins-x.io
+Successfully added Helm repository jenkins-x.
+Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
+retrying after error:failed to add the repository 'releases' with URL 'http://jenkins-x-chartmuseum:8080': failed to run 'helm repo add releases http://jenkins-x-chartmuseum:8080' command in directory '.', output: 'Error: Looks like "http://jenkins-x-chartmuseum:8080" is not a valid chart repository or cannot be reached: Get http://jenkins-x-chartmuseum:8080/index.yaml: EOF': exit status 1
+retrying after error:failed to add the repository 'releases' with URL 'http://jenkins-x-chartmuseum:8080': failed to run 'helm repo add releases http://jenkins-x-chartmuseum:8080' command in directory '.', output: 'Error: Looks like "http://jenkins-x-chartmuseum:8080" is not a valid chart repository or cannot be reached: Get http://jenkins-x-chartmuseum:8080/index.yaml: dial tcp 10.55.250.160:8080: connect: connection timed out': exit status 1
+retrying after error:failed to add the repository 'releases' with URL 'http://jenkins-x-chartmuseum:8080': failed to run 'helm repo add releases http://jenkins-x-chartmuseum:8080' command in directory '.', output: 'Error: Looks like "http://jenkins-x-chartmuseum:8080" is not a valid chart repository or cannot be reached: Get http://jenkins-x-chartmuseum:8080/index.yaml: EOF': exit status 1
+retrying after error:failed to add the repository 'releases' with URL 'http://jenkins-x-chartmuseum:8080': failed to run 'helm repo add releases http://jenkins-x-chartmuseum:8080' command in directory '.', output: 'Error: Looks like "http://jenkins-x-chartmuseum:8080" is not a valid chart repository or cannot be reached: Get http://jenkins-x-chartmuseum:8080/index.yaml: dial tcp 10.55.250.160:8080: connect: connection timed out': exit status 1
+retrying after error:failed to add the repository 'releases' with URL 'http://jenkins-x-chartmuseum:8080': failed to run 'helm repo add releases http://jenkins-x-chartmuseum:8080' command in directory '.', output: 'Error: Looks like "http://jenkins-x-chartmuseum:8080" is not a valid chart repository or cannot be reached: Get http://jenkins-x-chartmuseum:8080/index.yaml: EOF': exit status 1
+error: failed to add chart repositories: failed to add the Helm repository with name 'releases' and URL 'http://jenkins-x-chartmuseum:8080': after 6 attempts, last error: failed to add the repository 'releases' with URL 'http://jenkins-x-chartmuseum:8080': failed to run 'helm repo add releases http://jenkins-x-chartmuseum:8080' command in directory '.', output: 'Error: Looks like "http://jenkins-x-chartmuseum:8080" is not a valid chart repository or cannot be reached: Get http://jenkins-x-chartmuseum:8080/index.yaml: dial tcp 10.55.250.160:8080: connect: connection timed out': exit status 1
+make: *** [preview] Error 1
+Step: build-step-**-preview:
+
