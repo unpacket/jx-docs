@@ -19,74 +19,75 @@ toc: true
 
 # Decisions
 
-Jenkins X is an opinionated developer experience, here we will explain the background and decisions we have taken to help explain the reasons for these opinions.  You may also want to take a look at the [Accelerate](https://jenkins-x.io/about/opinions/) page for details on how Jenkins X implements the capabilities recommended by 
+Jenkins X는 의견이 많은 개발자 경험입니다. 여기에서는 이러한 의견에 대한 이유를 설명하기 위해 취한 배경과 결정에 대해 설명합니다. Jenkins X가 권장하는 기능을 구현하는 방법에 대한 자세한 내용은 [Accelerate](https://jenkins-x.io/about/opinions/) 페이지를 참조하십시오.
 
 ## Kubernetes
 
-First is why Jenkins X is purely focused on Kubernetes and is only intended to run on it.
+첫 번째 이유는 Jenkins X가 Kubernetes에 전적으로 초점을 맞추고 실행하기위한 것입니다.
 
-Kubernetes has won the cloud wars, every major cloud provider now either supports Kubernetes or is actively working on a Kubernetes solution.  Google, Microsoft, Amazon, Red Hat, Oracle, IBM, Alibaba, Digital Ocean, Docker, Mesos and Cloud Foundry to name a few.  We now have one deployment platform to target and develop first class portable applications for.
+Kubernetes는 클라우드 전쟁에서 승리했으며 이제 모든 주요 클라우드 제공 업체는 Kubernetes를 지원하거나 Kubernetes 솔루션을 적극적으로 연구하고 있습니다. Google, Microsoft, Amazon, Red Hat, Oracle, IBM, Alibaba, Digital Ocean, Docker, Mesos 및 Cloud Foundry 등이 있습니다. 이제 일류 휴대용 응용 프로그램을 대상으로 개발할 수있는 배포 플랫폼이 하나 있습니다.
 
-The Kuberetes ecosystem is rich with innovation and with a vibrant, forward thinking, diverse open source community which is inviting only suggests great things for all involved.
+Kuberetes 생태계는 혁신이 풍부하고 활기차고 미래 지향적이며 다양한 오픈 소스 커뮤니티가있어 모든 관련자들에게 훌륭한 것을 제안합니다. Jenkins X는 가능하면 퍼블릭 클라우드 관리 형 Kubernetes 클러스터를 사용하는 것이 좋습니다. GKE, AKS 및 EKS는 모두 Kubernetes 마스터를 무료로 관리하고 운영합니다. 응용 프로그램을 실행하는 데 필요한 작업자 리소스 비용을 지불합니다 이는 Kubernetes 클러스터의 설치, 업그레이드 및 유지 관리 위험을 크게 줄입니다.
 
-Jenkins X strongly recommends using public cloud managed Kubernetes clusters where possible. GKE, AKS and EKS all manage and run your Kubernetes masters for __free__ you pay for the worker resources required to run your applications.  This dramatically reduces risk of installing, upgrading and maintaining your Kubernetes cluster.  
-
-i.e. let folks that know how to run containers and manage clusters at scale so you can focus on adding value to your business.
+즉, 컨테이너를 실행하고 클러스터를 대규모로 관리하는 방법을 알고있는 사람들에게 비즈니스에 가치를 더하는 데 집중할 수 있도록하십시오.
 
 
 ## Draft
 
-[Draft](https://draft.sh) has a few capabilities but Jenkins X only uses the language detection and pack creation feature.  Jenkins X maintains it's own [draft packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) tailored to run with Jenkins X.
+[Draft](https://draft.sh) 에는 몇 가지 기능이 있지만 Jenkins X는 언어 감지 및 팩 작성 기능 만 사용합니다. Jenkins X는 Jenkins X와 함께 실행되도록 맞춤식 [draft packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 을 유지 관리합니다.
 
-Draft provides a great way to bootstrap a source code project with the necessary packaging needed to run the application on Kubernetes.
+Draft는 Kubernetes에서 애플리케이션을 실행하는 데 필요한 패키징으로 소스 코드 프로젝트를 부트 스트랩하는 좋은 방법을 제공합니다.
 
-The Draft project came from Deis who were acquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
+Draft 프로젝트는 Microsoft가 인수 한 Deis에서 왔으며 Kubernetes 개발자 스토리에 지속적으로 투자하고 발전시키고 있습니다
 
 ## Helm
 
-[Helm](https://helm.sh) provides the templated packaging for running applications on Kubernetes.  We've received mixed feedback from our use of Helm.  From our experience being able to template and compose multiple Helm Charts together has been a very welcome find. This lead to our use of using Helm to compose, install and upgrade entire environments and being able to easily override values such as number of replicas or application resource limits per environment for example.
+[Helm](https://helm.sh)은 Kubernetes에서 응용 프로그램을 실행하기위한 템플릿 패키지를 제공합니다. Helm 사용에 대한 의견이 혼합되어 있습니다.여러 Helm 차트를 함께 템플릿하고 구성 할 수있는 경험을 통해 매우 반가운 발견이었습니다. 이를 통해 Helm을 사용하여 전체 환경을 작성, 설치 및 업그레이드하고 값으로 쉽게 재정의 할 수 있습니다.예를 들어 환경 당 여러 복제본 또는 응용 프로그램 리소스 제한과 같은
 
-OpenShift Templates aimed to do a similar thing however they are OpenShift specific.
 
-Lots of the concerns with Helm are being addressed with the major version upgrade of Helm 3.  Removing the use of Tiller the server side component of Helm is a big win as it's seen as being insecure given the elevated permissions it needs to run.  Jenkins X provides a way https://jenkins-x.io/architecture/helm3/ to use the beta version of Helm 3 for folks that would like to try this instead, we're using this ourselves and it's working great so far.  If there are issues we'd like to feedback to the Helm project so we can help get them to GA sooner.
+OpenShift 템플릿은 비슷한 작업을 수행하는 것을 목표로하지만 OpenShift 전용입니다.
 
-The Helm project came from Deis who were acquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
+Helm 3의 주요 버전 업그레이드로 Helm에 대한 많은 우려가 해결되고 있습니다. Tiller 사용을 제거하면 Helm의 서버 측 구성 요소가 큰 승리입니다. 실행 권한이 높아지면 안전하지 않은 것으로 보입니다. Jenkins X는 https://jenkins-x.io/architecture/helm3/ 에서 Helm 3 베타 버전을 대신 사용하려는 사람들에게 대신 사용할 수있는 방법을 제공합니다. 우리는 이것을 직접 사용하고 있으며 지금까지 잘 작동하고 있습니다. 문제가있는 경우 Helm 프로젝트에 피드백을 보내 주시면 더 빨리 GA에 문의 할 수 있습니다.
+
+Helm 프로젝트는 Microsoft가 인수 한 Deis에서 왔으며 Kubernetes 개발자 스토리에 계속 투자하고 발전시키고 있습니다. 
 
 ## Skaffold
 
-Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Buidler](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).  
+Jenkins X는 [Skaffold](https://github.com/GoogleContainerTools/skaffold)를 사용하여 파이프 라인에서 빌드 및 푸시 이미지 작업을 수행합니다. 
+Skaffold를 사용하면 [Google Container Buidler](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) 및 [ECR](https://aws.amazon.com/ecr/)과 같은 다양한 이미지 빌더 및 레지스트리 서비스를 구현할 수 있습니다.  
 
-For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [kaniko](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
+컨테이너 빌더 또는 레지스트리 서비스를 사용하여 퍼블릭 클라우드에서 실행되고 있지 않은 사람들을 위해 Skaffold는 [kaniko](https://github.com/GoogleContainerTools/kaniko) 와도 함께 작동 할 수 있으며,이를 통해 파이프 라인은 루트가없는 컨테이너를 사용하여 도커 이미지를 구축 할 수 있습니다. 이는 클러스터의 각 노드에서 도커 소켓을 마운트하는 것보다 훨씬 안전합니다.
 
 ## Jenkins
 
-Jenkins as a large JVM that isn't highly available, may seem a surprise to be selected as the pipeline engine to use in the Cloud, however the adoption of Jenkins by developers and the community it has means it is ideal to use and evolve it's own cloud native story.  Already Jenkins X generates Kubernetes Custom Resource Definitions for pipeline activities that our IDE and CLI tooling uses rather than querying Jenkins.  We will be storing Jenkins builds and runs objects in Kubernetes rather than in the `$JENKINS_HOME` which means we can scale Jenkins masters.  We are also switching to Prow to intercept Git webhook events rather than using Jenkins, this means we can have a highly available solution as well as hand off the scheduling of builds to Kubernetes.  
+고 가용성이 아닌 대형 JVM 인 Jenkins는 클라우드에서 사용할 파이프 라인 엔진으로 선정 된 것은 놀라운 일입니다.그러나 개발자와 커뮤니티에서 Jenkins를 채택한 것은 현실적인 사용의 의미와  그들의 클라우드를 발전시키기 위한 이야기 입니다.  Jenkins X는 이미 Jenkins를 쿼리하는 대신 IDE 및 CLI 도구에서 사용하는 파이프 라인 활동에 대한 Kubernetes 사용자 정의 리소스 정의를 생성합니다. Jenkins 빌드를 저장하고 객체를 $ JENKINS_HOME이 아닌 Kubernetes에 저장하여 Jenkins 마스터를 확장 할 수 있습니다. 또한 Jenkins를 사용하지 않고 Git 웹 후크 이벤트를 가로 채기 위해 Prow로 전환하고 있습니다. 이는 고 가용성 솔루션을 보유하고 Kubernetes에 빌드 일정을 넘길 수 있음을 의미합니다.
 
-TL;DR we are pushing more of the Jenkins master functionality down into the Kubernetes platform.
+TL; DR 우리는 더 많은 Jenkins 마스터 기능을 Kubernetes 플랫폼으로 푸시하고 있습니다.
 
-Taking this approach also means we will be able to support other pipeline engines in the future as well.
+이 접근 방식을 취하면 향후 다른 파이프 라인 엔진도 지원할 수 있습니다.
 
 ## Prow
 
-[Prow](https://github.com/kubernetes/test-infra/tree/master/prow) handles Git events and can trigger workflows in Kubernetes.
+[Prow](https://github.com/kubernetes/test-infra/tree/master/prow)는 Git 이벤트를 처리하고 Kubernetes에서 워크 플로를 트리거 할 수 있습니다.
 
-Prow can run in a highly available mode where multiple pods for a webhook ingress URL.  In contrast with Jenkins if you perform an upgrade then Jenkins has some downtime where webhook events can be missed.  This is in our future plans and we hope to be available soon.
+Prow는 webhook 들어오는 URL에 대한 여러 파드가있는 고 가용성 모드에서 실행될 수 있습니다. Jenkins와 달리 업그레이드를 수행하는 경우 Jenkins에는 웹 후크 이벤트를 놓칠 수있는 가동 중지 시간이 있습니다. 이것은 향후 계획에 있으며 곧 제공 될 수 있기를 바랍니다.
 
 ## Nexus
 
-[Nexus](https://help.sonatype.com/repomanager3) is an overweight JVM that recently moved to OSGi however it does the job we need of it.  Cache dependencies for faster builds and provide a shared repository where teams can share their released artifacts.  
+[Nexus](https://help.sonatype.com/repomanager3)는 최근에 OSGi로 이동 한 과체중 JVM이지만 필요한 작업을 수행합니다. 빠른 빌드를 위해 종속성을 캐시하고 팀이 릴리스 된 아티팩트를 공유 할 수있는 공유 저장소를 제공하십시오.
 
-If someone developed an open source artifact repository server in a more cloud friendly language like Go then Jenkins X would likely switch to save on cloud bills.
+누군가 Go와 같이보다 클라우드 친화적 인 언어로 오픈 소스 아티팩트 리포지토리 서버를 개발했다면 Jenkins X는 클라우드 요금을 절약하도록 전환 할 것입니다.
 
-Right now Jenkins X doesn't use the docker registry from Nexus.  The main reason was we needed to do some work to setup pod definitions with image pull secrets so we can use the authenticated registry.  Our preferred approach however is to switch to using native cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
+현재 Jenkins X는 Nexus의 도커 레지스트리를 사용하지 않습니다. 주된 이유는 인증 된 레지스트리를 사용할 수 있도록 이미지 풀 비밀을 사용하여 포드 정의를 설정하는 작업이 필요했기 때문입니다. 그러나 우리가 선호하는 방법은 Skaffold의 도움을 받아 Amazon의 [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) 또는 Dockerhub와 같은 기본 클라우드 공급자 레지스트리를 사용하도록 전환하는 것입니다.
+
 
 ## Docker registry
 
-As above, we don't intend to use [this registry](https://github.com/kubernetes/charts/tree/master/stable/docker-registry) long term as we prefer using cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
+위와 같이 Amazon의 [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) 또는 Dockerhub와 같은 클라우드 공급자 레지스트리를 Skaffold의 도움으로 사용하는 것을 선호하므로 [레지스트리](https://github.com/kubernetes/charts/tree/master/stable/docker-registry)를 장기간 사용하지 않을 것입니다.
 
 ## ChartMuseum
 
-At time of creating Jenkins X there were few options of how to publish Helm Charts, the Kubernetes community uses GitHub pages but we wanted to find a solution that works for folks that use any git provider.  [ChartMuseum](https://github.com/kubernetes-helm/chartmuseum) is written in Go so performs well in the cloud, it supports multiple cloud storage and works great with Monocular.
+Jenkins X를 만들 때 Helm Charts를 게시하는 방법에 대한 몇 가지 옵션이 있었지만 Kubernetes 커뮤니티는 GitHub 페이지를 사용하지만 모든 git 공급자를 사용하는 사람들에게 적합한 솔루션을 찾고 싶었습니다. [ChartMuseum](https://github.com/kubernetes-helm/chartmuseum)은 Go로 작성되었으므로 클라우드에서 잘 수행되며 여러 클라우드 스토리지를 지원하며 Monocular와 잘 작동합니다
 
 ## Monocular
 
