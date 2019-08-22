@@ -91,22 +91,23 @@ Jenkins X를 만들 때 Helm Charts를 게시하는 방법에 대한 몇 가지 
 
 ## Monocular
 
-We use [Monocular](https://github.com/kubernetes-helm/monocular) to discover our Teams published applications, we could use KubeApps by default instead if it is preferred by the community but we'll enable KubeApps as an addon regardless.
+우리는 [Monocular](https://github.com/kubernetes-helm/monocular)를 사용하여 Teams에서 게시 한 응용 프로그램을 검색합니다. 커뮤니티에서 선호하는 경우 기본적으로 KubeApps를 대신 사용할 수 있지만 KubeApps를 애드온으로 사용할 수 있습니다.
+
 
 ## Git
 
-Jenkins X only works with Git.  There are a lot of dependencies and client implementations Jenkins X already needs to support for different Git providers, we don't hear enough demand to support other version control systems so for now Jenkins X is tied to Git.
+Jenkins X는 Git에서만 작동합니다. Jenkins X는 이미 다른 Git 공급자를 지원해야하는 많은 종속성 및 클라이언트 구현이 있습니다. 다른 버전 제어 시스템을 지원해야하는 수요가 충분하지 않으므로 현재 Jenkins X는 Git에 연결되어 있습니다.
 
 ## Programming languages
 
-Jenkins X aims to help provide the right level of feedback for developers to understand how their applications are performing and give them easy ways to experiment with other languages which may suit both the feature and running on the Cloud better.  For example there are a lot of Java based organisations that only know how to write, run and maintain Java applications.  Java is extremely resource intensive compared with Golang, Rust, Swift, NodeJS to name a few, this results in much much higher cloud bills each month.  With Jenkins X we aim to help developers experiment with other options using quickstarts and metrics addons like Grafana and Prometheus to see how they behave in the cloud.
+Jenkins X는 개발자가 애플리케이션의 성능을 이해하고 기능과 클라우드에서 더 잘 실행되는 다른 언어를 쉽게 실험 할 수있는 방법을 제공 할 수 있도록 올바른 피드백을 제공하는 것을 목표로합니다. 예를 들어 Java 응용 프로그램을 작성, 실행 및 유지 관리하는 방법 만 알고있는 많은 Java 기반 조직이 있습니다. Java는 Golang, Rust, Swift, NodeJS와 비교할 때 리소스를 많이 사용하므로 매월 클라우드 요금이 훨씬 높아집니다. Jenkins X를 사용하면 개발자가 Grafana 및 Prometheus와 같은 빠른 시작 및 메트릭 애드온을 사용하여 클라우드에서 어떻게 작동하는지 확인할 수있는 다른 옵션을 실험 할 수 있습니다.
 
-For example any new microservice that we build on the Jenkins X project tends to be in either Golang or NodeJS given the huge effect is has on our cloud billing.  It does take time to shift to a new programming language but with Jenkins X we hope we can mitigate a lot of risk using quickstarts, automated CI/CD and a relatively consistent way of working on all languages.
+예를 들어 Jenkins X 프로젝트에 구축 한 새로운 마이크로 서비스는 클라우드 사용료에 큰 영향을 미치므로 Golang 또는 NodeJS에있는 경향이 있습니다. 새로운 프로그래밍 언어로 전환하는 데 시간이 걸리지 만 Jenkins X에서는 빠른 시작, 자동화 된 CI / CD 및 모든 언어에서 비교적 일관된 작업 방식을 사용하여 많은 위험을 완화 할 수 있기를 바랍니다.
 
 ### Maven
+Maven에는 CD에 적합하지 않은 많은 사람들이 사용하는 도구가 있습니다. 예를 들어, [maven release plugin](http://maven.apache.org/maven-release/maven-release-plugin/)인은 프로젝트 버전을 지정하고 CD 세계에서 다른 릴리스를 트리거하여 재귀 루프를 발생시키는 새로운 다음 SNAPSHOT 버전을 마스터하도록 직접 커밋합니다.
 
-Maven has some tooling that a lot of folks are used to using which doesn't suit CD particularly well.  For example the [maven release plugin](http://maven.apache.org/maven-release/maven-release-plugin/) will version a project and commit directly back to master the new next SNAPSHOT version which in CD world would trigger another release resulting in a recursive loop.
+Java 프로젝트의 경우 Jenkins X는 [maven version:set plugin](https://www.mojohaus.org/versions-maven-plugin/set-mojo.html)인을 사용하여 위에서 언급 한 #Versioning 단계 다음에 다음 릴리스 버전을 사용하여 프로젝트의 모든 폼을 업데이트합니다.
 
-For Java projects Jenkins X uses the [maven version:set plugin](https://www.mojohaus.org/versions-maven-plugin/set-mojo.html) to update all poms in a project using the next release version following the #Versioning step mentioned above.
+새로운 메이저 또는 마이너 버전 증분이 필요한 경우 사용자는 새로운 메이저 / 마이너 번호로 새 Git 태그를 만들 수 있으며 Jenkins X는이를 존중합니다. 또는 부모 pom.xml과 자식 pom 파일을 직접 업데이트 할 수 있으며 Jenkins X는 새로운 주 버전 또는 부 버전을 감지하고 사용합니다.
 
-If a new major or minor version increment is needed users can create a new Git tag with the new major / minor number and Jenkins X will respect that.  Alternatively you can update the parent `pom.xml` and any child pom files yourself and Jenkins X will detect and use the new major or minor version.
